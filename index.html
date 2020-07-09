@@ -336,7 +336,7 @@ a:hover:after{
 [[$dropPolice|Police liquidated]]
 [[$policeAlive|Start]]
 
-</tw-passagedata><tw-passagedata pid="6" name="Suit one group" tags="" position="4291.333333333333,1010" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="6" name="Suit one group" tags="" position="4291,1010" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 [[Сделать вицепрезидентом военного|Make Vice President Military]]
 [[Открыть бесплатные больницы|Open free hospitals]]
 [[Дать крестьянам самоуправление|Give peasants self-government]]
@@ -456,7 +456,7 @@ a:hover:after{
 [[Попросить займа у русских|Ask for a loan from Russians]]
 [[Попросить помощи у амер|Ask for help from Amer]]
 [[Национализирвоать предпр. лефтото|Nationalize enterprises Leftotos]]
-[[Назад|Start]]</tw-passagedata><tw-passagedata pid="19" name="Strengthen one group" tags="" position="8707.333333333332,1004" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+[[Назад|Start]]</tw-passagedata><tw-passagedata pid="19" name="Strengthen one group" tags="" position="8707,1004" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 [[Приобрести тяжелую артиллерию|Acquire heavy artillery]]
 [[Расширить права крестьян|Expand the rights of peasants]]
 [[Позволить крестьянам свою полицию|Let the peasants own their police]]
@@ -752,7 +752,7 @@ a:hover:after{
 &lt;&lt;if $bank &gt; 0&gt;&gt;
 [[Опустошить банк|Empty the bank]]
 &lt;&lt;/if&gt;&gt;
-[[Закончить игру|State]]</tw-passagedata><tw-passagedata pid="36" name="You not popular of christians" tags="" position="5101.333333333334,301.99999999999994" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+[[Закончить игру|State]]</tw-passagedata><tw-passagedata pid="36" name="You not popular of christians" tags="" position="5101,301" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;set 
 	$prevCoin to $coin, 
 	$prevPopularWithArmy to $popularWithArmy,
@@ -945,7 +945,7 @@ a:hover:after{
 	У тебя уже есть вертолет для побега, если что-то пойдет не так. Конечно ты бы мог купить и еще один, но лучше уже потратить деньги на государство. А то еще люди узнают.
 &lt;/div&gt;
 [[Да наверное правда|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="51" name="New month" tags="" position="6403.666666666667,495.3333333333333" size="100,100">&lt;&lt;set 
+[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="51" name="New month" tags="" position="6403,495" size="100,100">&lt;&lt;set 
   $month += 1,
   $virus to false,
   $improveSecretPolice to false,
@@ -1107,10 +1107,29 @@ a:hover:after{
 &lt;div class=&quot;message&quot;&gt;
 	Тайная полиция уже усилена и на страже закона, думаю они справятся со своей задачей на все сто.
 &lt;/div&gt;
-[[Да наверное правда|Start]]</tw-passagedata><tw-passagedata pid="66" name="Russians please help" tags="" position="4407,304" size="100,100">&lt;&lt;set $coin += 1000, $popularWithRussians to 0&gt;&gt;
+[[Да наверное правда|Start]]</tw-passagedata><tw-passagedata pid="66" name="Russians please help" tags="" position="4407,304" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;if $popularWithRussians &gt; 50&gt;&gt;
+&lt;&lt;set $coin += 1000, $popularWithRussians to 0&gt;&gt;
 &lt;&lt;goto [[Month]]&gt;&gt;
-</tw-passagedata><tw-passagedata pid="67" name="America please help" tags="" position="4604,302" size="100,100">&lt;&lt;set $coin += 1000, $popularWithAmericans to 0&gt;&gt;
-&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="68" name="Empty the bank" tags="" position="4804,304" size="100,100">&lt;&lt;set $coin += $bank, $bank to 0 &gt;&gt;
+
+&lt;&lt;else&gt;&gt;
+&lt;div class=&quot;message&quot;&gt;
+	АРоссия отказывается помогать тебе. Думаю стоит пересмотерть свои способы ведения политики.
+&lt;/div&gt;
+
+[[Закончить игру|Previous Game]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="67" name="America please help" tags="" position="4604,302" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;if $popularWithAmericans &gt; 50&gt;&gt;
+&lt;&lt;set $coin += 1000, $popularWithAmericans to 0&gt;&gt;
+&lt;&lt;goto [[Month]]&gt;&gt;
+
+&lt;&lt;else&gt;&gt;
+&lt;div class=&quot;message&quot;&gt;
+	Америка не будет давать тебе долг из-за политической ситуации.
+&lt;/div&gt;
+
+[[Закончить игру|Previous Game]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="68" name="Empty the bank" tags="" position="4804,304" size="100,100">&lt;&lt;set $coin += $bank, $bank to 0 &gt;&gt;
 &lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="No money" tags="" position="6196,1693" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;message&quot;&gt;
   Извини, но у тебя не хватает денег! Попробуй сначала увеличить количество денег в казне
@@ -1151,7 +1170,7 @@ a:hover:after{
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="Christians against protests" tags="" position="5604.666666666667,698.3333333333334" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="Christians against protests" tags="" position="5604,698" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;if $hardWithArmy &gt; $partisansHards&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Крестьяне готовы пойти в бой ради их великого правителя. Думаю что ты правильно управлял страной, раз они готовы ради тебя подавить революцию!
@@ -1165,7 +1184,7 @@ a:hover:after{
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="Police against protests" tags="" position="5406.333333333333,897" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="Police against protests" tags="" position="5406,897" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;if $hardWithPolice &gt; $partisansHards&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Тайная полиция смогла найти способ подавления революции! Не зря они свой хлеб едят!
@@ -1193,13 +1212,13 @@ a:hover:after{
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="Get helicopter" tags="" position="5402.666666666668,503.66666666666663" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="Get helicopter" tags="" position="5402,503" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Поздравляю, ты смог смотаться из этой страны. Надеюсь ее жители не очень расстроятся и не решать гнаться за тобой. Теперь главное не возвращаться сюда, хуже будет...
 	&lt;img class=&quot;helicopter&quot; src=&quot;https://cs9.pikabu.ru/post_img/big/2020/01/20/5/1579503084188783428.png&quot;&gt;
 &lt;/div&gt;
 [[Начать игру заново|Previous Game]]
-</tw-passagedata><tw-passagedata pid="79" name="Russians against protests" tags="" position="5601.333333333333,898.3333333333333" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="79" name="Russians against protests" tags="" position="5601,898" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;if $hardWithRussians &gt; $partisansHards&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Россия очень сильно помогла тебе с подавление революции. Думаю в тяжелый для нее час ты бы тоже ей помог!
@@ -1213,7 +1232,7 @@ a:hover:after{
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="80" name="Revolution" tags="" position="5501.666666666667,298.3333333333333" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="80" name="Revolution" tags="" position="5501,298" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;set 
 	$prevCoin to $coin, 
 	$prevPopularWithArmy to $popularWithArmy,
@@ -1257,8 +1276,8 @@ a:hover:after{
   [[Улететь от сюда!|Get helicopter]]
   &lt;&lt;/if&gt;&gt;
   [[Закончить игру|Previous Game]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="Goodbye bank" tags="" position="5099.666666666667,501.6666666666667" size="100,100">&lt;&lt;set $coin += $bank, $bank to 0 &gt;&gt;
-&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="Army against crists" tags="" position="5098.000000000002,720" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="Goodbye bank" tags="" position="5099,501" size="100,100">&lt;&lt;set $coin += $bank, $bank to 0 &gt;&gt;
+&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="Army against crists" tags="" position="5098,720" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;if $hardWithArmy &gt; $hardWithChristians&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	
@@ -1275,7 +1294,7 @@ a:hover:after{
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="Police against crists" tags="" position="5096.333333333335,901.9999999999998" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="Police against crists" tags="" position="5096,901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;if $hardWithPolice &gt; $hardWithChristians&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Тайная полиция нашла слабое место крестьян, теперь ты можешь надавить на него и продолжить правление!
