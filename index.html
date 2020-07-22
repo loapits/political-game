@@ -399,7 +399,7 @@ a:hover:after{
   &lt;&lt;goto [[Free hosp seted]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-  &lt;&lt;set $coin -= 10, $expenses += 20, $popularWithChristians += 5, $freeHosp to true&gt;&gt;
+  &lt;&lt;set $coin -= 500, $expenses += 20, $popularWithChristians += 5, $freeHosp to true&gt;&gt;
 
   &lt;div class=&quot;message&quot;&gt;
   Теперь народ сможет лечиться бесплатно! Скорее всего это правильный ход!
@@ -422,7 +422,7 @@ a:hover:after{
   &lt;&lt;goto [[Landowner dont manager]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $popularWithChristians += 5, $popularWithArmy -= 10, $popularWithPolice -= 10, $expenses += 5, $selfManagement to true&gt;&gt;
+&lt;&lt;set $popularWithChristians += 5, $popularWithArmy -= 20, $popularWithPolice -= 40, $expenses += 5, $selfManagement to true&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
   Теперь крестьяне обладают некой властью!
@@ -592,7 +592,7 @@ a:hover:after{
 &lt;&lt;goto [[Rights of peasants have already expanded]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $chrestRights to true, $popularWithChristians += 5, $popularWithArmy -= 10, $popularWithPolice -=10&gt;&gt;
+&lt;&lt;set $chrestRights to true, $popularWithChristians += 5, $popularWithArmy -= 40, $popularWithPolice -= 40&gt;&gt;
 	Права крестьян расширены.
 	&lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -609,7 +609,7 @@ a:hover:after{
 &lt;&lt;goto [[Christians have already owned their police]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $christPolice to true, $popularWithChristians += 5, $popularWithArmy -= 10, $popularWithPolice -= 10&gt;&gt;
+&lt;&lt;set $christPolice to true, $popularWithChristians += 5, $popularWithArmy -= 40, $popularWithPolice -= 40&gt;&gt;
 	  Вы позволили крестьянам свою полицию
 	  Эта операция не будет ничего стоить
 	  &lt;&lt;display [[Resourses]]&gt;&gt;
@@ -731,7 +731,7 @@ a:hover:after{
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="30" name="Weapon of Leftoto gone to America" tags="" position="4093,1908" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;&lt;set $coin += 50, $popularWithArmy -= 10, $leftotoMyFriend to true, $americanArms to true&gt;&gt;
+&lt;&lt;set $coin += 20, $popularWithArmy -= 40, $leftotoMyFriend to true, $americanArms to true&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
   Оружие Лефтото только что было продано Американцам.
@@ -744,7 +744,7 @@ a:hover:after{
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="31" name="Mines was Sold to US firms" tags="" position="4493,1900" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;&lt;set $coin += 120, $popularWithAmericans += 10, $popularWithChristians -=20, $partisans -= 3, $firms to true&gt;&gt;
+&lt;&lt;set $coin += 120, $popularWithAmericans += 10, $popularWithChristians -= 40, $partisans -= 5, $firms to true&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
   Ты удачно продал шахты фирмам США!
@@ -757,7 +757,7 @@ a:hover:after{
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="32" name="Naval base given to Russians" tags="" position="4895,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;&lt;set $expenses += 10, $popularWithRussians += 10, $popularWithChristians -= 20, $partisans -= 4, $popularWithArmy -= 5, $seaToRussian to true&gt;&gt;
+&lt;&lt;set $expenses += 10, $popularWithRussians += 10, $popularWithChristians -= 40, $partisans -= 5, $popularWithArmy -= 40, $seaToRussian to true&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
   Ты отдал русским морскую базу
@@ -848,7 +848,7 @@ a:hover:after{
 [[Закончить игру|Previous Game]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="Police have improved" tags="" position="5697,1914" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;&lt;set $expenses += 6, $popularWithChristians -=20, $partisans -= 3, $hardWithPolice += 7, $improveSecretPolice to true&gt;&gt;
+&lt;&lt;set $expenses += 6, $popularWithChristians -= 40, $partisans -= 5, $hardWithPolice += 7, $improveSecretPolice to true&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
   Ты резко усилил тайную полицию
@@ -866,7 +866,7 @@ a:hover:after{
 
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
-&lt;&lt;set $coin -= 100, $hardWithArmy += 7, $popularWithChristians-= 20, $partisans-= 3, $bodyguard to true&gt;&gt;
+&lt;&lt;set $coin -= 500, $hardWithArmy += 7, $popularWithChristians -= 40, $partisans -= 3, $bodyguard to true&gt;&gt;
   Ты усилил личную охрану
   &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;
@@ -883,7 +883,7 @@ a:hover:after{
 &lt;&lt;goto [[No money]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $coin -= 400, $helicopter to true&gt;&gt;
+&lt;&lt;set $coin -= 1000, $helicopter to true&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
   Ты купил вертолет! Теперь у тебя есть возможность убежать, если поднимут восстание против тебя!
@@ -901,7 +901,7 @@ a:hover:after{
 &lt;&lt;goto [[No money]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $coin -= 700, $bank += 700, $addToBank to true&gt;&gt;
+&lt;&lt;set $coin -= 1000, $bank += 800, $addToBank to true&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
   Ты пополнили швейцарский банк
@@ -917,7 +917,7 @@ a:hover:after{
 
 </tw-passagedata><tw-passagedata pid="39" name="Leftotos enterprises have Nationalize" tags="" position="7697,1906" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;&lt;set $coin += 100, $popularWithChristians += 10, $partisans -= 5, $leftotoFactory to true&gt;&gt;
+&lt;&lt;set $coin += 100, $popularWithChristians += 10, $partisans -= 8, $leftotoFactory to true&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
   Ты национализирвоал предпр. лефтото!
@@ -939,7 +939,7 @@ a:hover:after{
 &lt;&lt;goto [[Not popular with neighbors]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $coin += 1000, $popularWithRussians -=5&gt;&gt;
+&lt;&lt;set $coin += 100, $popularWithRussians -= 5&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 Россия помогла тебе, думаю все будет нормально, но доверие к тебе пошатнулось.
 &lt;&lt;display [[Resourses]]&gt;&gt;
@@ -961,7 +961,7 @@ a:hover:after{
 &lt;&lt;goto [[Not popular with neighbors]]&gt;&gt;
 &lt;&lt;else&gt;&gt;
 
-&lt;&lt;set $coin += 1000, $popularWithAmericans -= 5&gt;&gt;
+&lt;&lt;set $coin += 100, $popularWithAmericans -= 5&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
 	Американцы согласились дать тебе денег!
@@ -1148,11 +1148,11 @@ $message1 to {
   $expenses  += 20,
   $popularWithArmy +=10,
   $popularWithPolice += 10,
-  $popularWithChristians -= 20,
-  $partisans -= 1,
+  $popularWithChristians -= 10,
+  $partisans -= 1
   &gt;&gt;&#96;,
   countBtn2: &#96;&lt;&lt;set
-  $popularWithArmy -=10,
+  $popularWithArmy -= 10,
   $popularWithPolice -= 10,
   $popularWithChristians += 20
   &gt;&gt;&#96;,
@@ -1181,11 +1181,11 @@ $message3 to {
   countBtn1: &#96;&lt;&lt;set
   $coin -= 500,
   $popularWithChristians += 7,
-  $popularWithArmy -= 16,
+  $popularWithArmy -= 10,
   $partisans += 1
   &gt;&gt;&#96;,
   countBtn2: &#96;&lt;&lt;set 
-  $popularWithChristians -= 25,
+  $popularWithChristians -= 35,
   $popularWithArmy += 5,
   $partisans -= 4
   &gt;&gt;&#96;,
@@ -1196,14 +1196,14 @@ $message3 to {
   button1: &quot;Денег нет, но вы держитесь&quot;,
   button2: &quot;Надо просто раздеваться и работать&quot;,
   countBtn1: &#96;&lt;&lt;set 
-  $popularWithChristians -= 35,
+  $popularWithChristians -= 10,
   $partisans -= 2,
   $popularWithArmy += 5
   &gt;&gt;&#96;,
   countBtn2: &#96;&lt;&lt;set 
   $coin -= 600,
   $popularWithChristians += 8,
-  $popularWithArmy -= 15
+  $popularWithArmy -= 10
   &gt;&gt;&#96;,
   effect1: &quot;Популярность сильно подорвана.&quot;,
   effect2: &quot;Популярность улучшилась, при этом из казны были потрачены деньги.&quot;,
@@ -1213,7 +1213,7 @@ $message5 to {
   message: &quot;Не соизволит ли ваше диктаторское высочество разрешить провести митинг?&quot;,
   button1: &quot;Я не потерплю протестов!&quot;,
   countBtn1: &#96;&lt;&lt;set 
-  $popularWithChristians -= 25,
+  $popularWithChristians -= 10,
   $partisans -= 5,
   $popularWithArmy += 15,
   $popularWithPolice += 10
@@ -1240,7 +1240,7 @@ $message7 to {
   button1: &quot;Завести уголовное дело&quot;,
   button2: &quot;Позвонить ему лично&quot;,
   button3: &quot;Убить&quot;,
-  countBtn1: &#96;&lt;&lt;set $popularWithArmy += 10, $popularWithPolice += 15, $popularWithChristians -= 15&gt;&gt;&#96;,
+  countBtn1: &#96;&lt;&lt;set $popularWithArmy += 10, $popularWithPolice += 15, $popularWithChristians -= 10&gt;&gt;&#96;,
   countBtn2: &#96;&lt;&lt;set coin -= 100&gt;&gt;&#96;,
   countBtn3: &#96;&lt;&lt;set $popularWithArmy += 10, $popularWithChristians += 10&gt;&gt;&#96;,
   goNext: &quot;Ок&quot;
@@ -1250,9 +1250,9 @@ $message8 to {
   button1: &quot;Отстранить от должности&quot;,
   button2: &quot;Расстрелять из винтовки&quot;,
   button3: &quot;Провести показательный процесс&quot;,
-  countBtn1: &#96;&lt;&lt;set $popularWithArmy -= 20, $vicePresident to false&gt;&gt;&#96;,
-  countBtn2: &#96;&lt;&lt;set $popularWithArmy -= 15, $vicePresident to false&gt;&gt;&#96;,
-  countBtn3: &#96;&lt;&lt;set $popularWithArmy -= 22, $vicePresident to false&gt;&gt;&#96;,
+  countBtn1: &#96;&lt;&lt;set $popularWithArmy -= 10, $vicePresident to false&gt;&gt;&#96;,
+  countBtn2: &#96;&lt;&lt;set $popularWithArmy -= 10, $vicePresident to false&gt;&gt;&#96;,
+  countBtn3: &#96;&lt;&lt;set $popularWithArmy -= 10, $vicePresident to false&gt;&gt;&#96;,
   effect1: &#96;Отстранен за утрату доверия. Дошутился.&#96;,
   effect2: &#96;Нечего было шутить.&#96;,
   effect3: &#96;Нечего было шутить.&#96;,
@@ -1279,6 +1279,7 @@ $message9 to {
   $hardWithArmy to 0,
   $hardWithChristians to 0,
   $hardWithPolice to 0,
+  $hardWithChristians to 15,
 
   $popularWithRussians to  0,
   $popularWithAmericans to  0,
