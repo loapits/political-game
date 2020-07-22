@@ -300,221 +300,364 @@ a:hover:after{
 	  [[Улучшить свои шансы|Improve chances]]
 	  [[Укрепить финансы|Improve finance]]
 	  [[Усилить одну группу|Strengthen one group]]
-	  [[Улучшить свои шансы|Improve chances]]
 	&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="Please all groups" tags="" position="2694,1510" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Снизить общий уровень налогов|Reduce taxes]]
 [[Провести кампанию популяризации|To popularize]]
 [[Ликвидировать тайную полицию|Eliminate Secret Police]]
-[[Назад|Start]]</tw-passagedata><tw-passagedata pid="3" name="Reduce taxes" tags="" position="2502,1711" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+[[Назад|Start]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="3" name="Reduce taxes" tags="" position="2502,1711" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $taxes === true&gt;&gt;
 &lt;&lt;goto [[Minimal taxes]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $expenses -= 8, $taxes to true&gt;&gt;
+&lt;&lt;set $expenses += 20, $popularWithChristians += 5, $taxes to true&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Ты уменьшил уровень налогов. Теперь месячные траты возрасли.
-	&lt;&lt;display [[Resourses]]&gt;&gt;
+  Ты уменьшил уровень налогов. Теперь месячные траты возрасли.
+  &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
+
 &lt;&lt;/if&gt;&gt;
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="4" name="To popularize" tags="" position="2697,1711" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="4" name="To popularize" tags="" position="2697,1711" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $popularCompany === true&gt;&gt;
+
 &lt;&lt;goto [[Has been popular]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $coin += 80, $popularCompany to true&gt;&gt;
+
+&lt;&lt;set $coin -= 500, $popularWithChristians += 10, $popularCompany to true&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Компания популяризации успешно проведена, скорее всего твоя популярность возрасла и народ теперь лояльнее относится к своему правительству!
-	&lt;&lt;display [[Resourses]]&gt;&gt;
+  Компания популяризации успешно проведена, скорее всего твоя популярность возрасла и народ теперь лояльнее относится к своему правительству!
+  &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
+
 &lt;&lt;/if&gt;&gt;
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="5" name="Eliminate Secret Police" tags="" position="2902,1710" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Если человек идиот, то это на долго!
 &lt;/div&gt;
-[[Да нормально все будет|Police liquidated]]
-[[Все-таки не стоит|Start]]
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Да нормально все будет|Police liquidated]]
+  [[Все-таки не стоит|Start]]
+&lt;/div&gt;
+
 
 </tw-passagedata><tw-passagedata pid="6" name="Suit one group" tags="" position="4289,1516" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-[[Сделать вицепрезидентом военного|Make Vice President Military]]
-[[Открыть бесплатные больницы|Open free hospitals]]
-[[Дать крестьянам самоуправление|Give peasants self-government]]
-[[Продать лефтото амер оружие|Sell Leftoto Amer weapon]]
-[[Продать шахты фирмам сша|Sell mines to US firms]]
-[[Дать русским морск базу|Give Russians a naval base]]
-[[Назад|Start]]</tw-passagedata><tw-passagedata pid="7" name="Make Vice President Military" tags="" position="3496,1708" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Сделать вицепрезидентом военного|Make Vice President Military]]
+  [[Открыть бесплатные больницы|Open free hospitals]]
+  [[Дать крестьянам самоуправление|Give christians self-government]]
+  [[Продать лефтото американское оружие|Sell Leftoto Amer weapon]]
+  [[Продать шахты фирмам сша|Sell mines to US firms]]
+  [[Дать русским морск базу|Give Russians a naval base]]
+  [[Назад|Start]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="7" name="Make Vice President Military" tags="" position="3496,1711" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $vicePresident === true&gt;&gt;
-&lt;&lt;goto [[Do not let the military]]&gt;&gt;
+  &lt;&lt;goto [[Do not let the military]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-&lt;&lt;set $vicePresident to true&gt;&gt;
-	Теперь пост вице-президента занят военным человеком. Надеюсь это сделает нашу страну более защищенной!
-	&lt;&lt;display [[Resourses]]&gt;&gt;
-&lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Open free hospitals" tags="" position="3703,1705" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;&lt;set $popularWithArmy += 10, $vicePresident to true&gt;&gt;
+  Теперь пост вице-президента занят военным человеком. Надеюсь это сделает нашу страну более защищенной!
+  &lt;&lt;display [[Resourses]]&gt;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
+
+
+
+</tw-passagedata><tw-passagedata pid="8" name="Open free hospitals" tags="" position="3703,1705" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $freeHosp === true&gt;&gt;
-&lt;&lt;goto [[Free hosp seted]]&gt;&gt;
+  &lt;&lt;goto [[Free hosp seted]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $coin -= 10, $expenses += 55, $freeHosp to true&gt;&gt;
-&lt;div class=&quot;message&quot;&gt;
-	Теперь народ сможет лечиться бесплатно! Скорее всего это правильный ход!
-&lt;&lt;if $virus === true&gt;&gt;
-	Тем более в период пандемии
+  &lt;&lt;set $coin -= 10, $expenses += 20, $popularWithChristians += 5, $freeHosp to true&gt;&gt;
+
+  &lt;div class=&quot;message&quot;&gt;
+  Теперь народ сможет лечиться бесплатно! Скорее всего это правильный ход!
+
+  &lt;&lt;if $virus === true&gt;&gt;
+  Тем более в период пандемии
+  &lt;&lt;/if&gt;&gt;
+
+  &lt;&lt;display [[Resourses]]&gt;&gt;
+  &lt;/div&gt;	
 &lt;&lt;/if&gt;&gt;
-	&lt;&lt;display [[Resourses]]&gt;&gt;
-&lt;/div&gt;	
-&lt;&lt;/if&gt;&gt;
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="9" name="Give peasants self-government" tags="" position="3906,1708" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="9" name="Give christians self-government" tags="" position="3906,1708" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $selfManagement === true&gt;&gt;
-&lt;&lt;goto [[Landowner dont manager]]&gt;&gt;
+  &lt;&lt;goto [[Landowner dont manager]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $selfManagement to true&gt;&gt;
+&lt;&lt;set $popularWithChristians += 5, $popularWithArmy -= 10, $popularWithPolice -= 10, $expenses += 5, $selfManagement to true&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Теперь крестьяне обладают некой властью!
-	&lt;&lt;display [[Resourses]]&gt;&gt;
+  Теперь крестьяне обладают некой властью!
+  &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]
+
+  &lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Sell Leftoto Amer weapon" tags="" position="4201,1715" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 &lt;&lt;if $americanArms === true&gt;&gt;
-	&lt;&lt;goto [[Weapons already sold to America]]&gt;&gt;
+  &lt;&lt;goto [[Weapons already sold to America]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-	Продажа оружия прибавит денег в казну!
+  Продажа оружия прибавит денег в казну!
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-[[Ок|Weapon of Leftoto gone to America]]
-[[Нет|Suit one group]]
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Ок|Weapon of Leftoto gone to America]]
+  [[Нет|Suit one group]]
+&lt;/div&gt;
+
 </tw-passagedata><tw-passagedata pid="11" name="Sell mines to US firms" tags="" position="4580,1706" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 &lt;&lt;if $firms === true&gt;&gt;
-&lt;&lt;goto [[Мine to firms]]&gt;&gt;
+  &lt;&lt;goto [[Мine to firms]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-	Вы точно хотите продать шахты фирмам США? Это добавит вам 120 в казну
+  Вы точно хотите продать шахты фирмам США?
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-[[Да, отдать|Mines was Sold to US firms]]
-[[Нет, вернуться|Suit one group]]</tw-passagedata><tw-passagedata pid="12" name="Give Russians a naval base" tags="" position="4986,1708" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Да, отдать|Mines was Sold to US firms]]
+  [[Нет, вернуться|Suit one group]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="12" name="Give Russians a naval base" tags="" position="4986,1708" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 &lt;&lt;if $seaToRussian === true&gt;&gt;
 &lt;&lt;goto [[Russian has a naval base]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-	Вы точно хотите отдать русским морскую базу? Ваши месячные расходы возрастут на 10
+  Ты точно хочешь отдать русским морскую базу?
 &lt;&lt;/if&gt;&gt;
+
 &lt;/div&gt;
-[[Да, отдать|Naval base given to Russians]]
-[[Нет, вернуться|Suit one group]]</tw-passagedata><tw-passagedata pid="13" name="Improve chances" tags="" position="6205.333333333333,1497.3333333333333" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-[[Резко усилить тайную полицию|Dramatically strengthen the secret police]]
-[[Усилить личную охрану|Strengthen bodyguard]]
-[[Приобрести вертолет|Get a helicopter]]
-[[Пополнить счет в швейцарском банке|Top up a Swiss bank account]]
-[[Назад|Start]]</tw-passagedata><tw-passagedata pid="14" name="Dramatically strengthen the secret police" tags="" position="5591,1720" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Да, отдать|Naval base given to Russians]]
+  [[Нет, вернуться|Suit one group]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="13" name="Improve chances" tags="" position="6205,1497" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Резко усилить тайную полицию|Dramatically strengthen the secret police]]
+  [[Усилить личную охрану|Strengthen bodyguard]]
+  [[Приобрести вертолет|Get a helicopter]]
+  [[Пополнить счет в швейцарском банке|Top up a Swiss bank account]]
+  [[Назад|Start]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="14" name="Dramatically strengthen the secret police" tags="" position="5591,1720" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 &lt;&lt;if $improveSecretPolice === true&gt;&gt;
-&lt;&lt;goto [[Improve secret police true]]&gt;&gt;
+  &lt;&lt;goto [[Improve secret police true]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-	Это увеличит месячные расходы.
+  Это увеличит месячные расходы.
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-[[Ок|Police have improved]]
-[[Нет|Improve chances]]
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Ок|Police have improved]]
+  [[Нет|Improve chances]]
+&lt;/div&gt;
+
 </tw-passagedata><tw-passagedata pid="15" name="Strengthen bodyguard" tags="" position="5982,1720" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $bodyguard === true&gt;&gt;
-&lt;&lt;goto [[Bodyguards was improved]]&gt;&gt;
+  &lt;&lt;goto [[Bodyguards was improved]]&gt;&gt;
 &lt;&lt;else&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Ты хочешь усилить личную охрану? Если вдруг проитв тебя поднимут восстание они помогут тебе!
+  Ты хочешь усилить личную охрану? Если вдруг проитв тебя поднимут восстание они помогут тебе!
 &lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;
-[[Ок|Bodyguards has improved]]
-[[Нет|Improve chances]]
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Ок|Bodyguards has improved]]
+  [[Нет|Improve chances]]
+&lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="16" name="Get a helicopter" tags="" position="6393,1712" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 &lt;&lt;if $helicopter === true&gt;&gt;
 &lt;&lt;goto [[Helicopter already purchased]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-	Да, кажется лучше купить его. Но на это уйдет часть денег из казны. Конечно не ты один разворовываешь государственный бюджет, никто не идеален... короче тссс...
+  Да, кажется лучше купить его. Но на это уйдет часть денег из казны. Конечно не ты один разворовываешь государственный бюджет, никто не идеален... короче тссс...
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-[[Купить|Just bought a helicopter]]
-[[Думаю не стоит|Improve chances]]
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Купить|Just bought a helicopter]]
+  [[Думаю не стоит|Improve chances]]
+&lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="17" name="Top up a Swiss bank account" tags="" position="6789,1712" size="100,100">&lt;div class=&quot;message&quot;&gt;
+
 &lt;&lt;if $addToBank === true&gt;&gt;
 &lt;&lt;goto [[Account already replenished]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-	Это уменьшит количество денег. Вы уверены что хотите это сделать?
+  Это уменьшит количество денег. Вы уверены что хотите это сделать?
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-[[Ок|Replenished an account in a Swiss bank]]
-[[Нет|Improve chances]]
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Ок|Replenished an account in a Swiss bank]]
+  [[Нет|Improve chances]]
+&lt;/div&gt;
+
 
 </tw-passagedata><tw-passagedata pid="18" name="Improve finance" tags="" position="7495,1510" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-[[Попросить займа у русских|Ask for a loan from Russians]]
-[[Попросить помощи у амер|Ask for help from Amer]]
-[[Национализирвоать предпр. лефтото|Nationalize enterprises Leftotos]]
-[[Назад|Start]]</tw-passagedata><tw-passagedata pid="19" name="Strengthen one group" tags="" position="8705,1510" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Попросить займа у русских|Ask for a loan from Russians]]
+  [[Попросить помощи у амер|Ask for help from Amer]]
+  [[Национализирвоать предпр. лефтото|Nationalize enterprises Leftotos]]
+  [[Назад|Start]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="19" name="Strengthen one group" tags="" position="8705,1511" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Приобрести тяжелую артиллерию|Acquire heavy artillery]]
 [[Расширить права крестьян|Expand the rights of peasants]]
 [[Позволить крестьянам свою полицию|Let the peasants own their police]]
-[[Назад|Start]]</tw-passagedata><tw-passagedata pid="20" name="Acquire heavy artillery" tags="" position="8398,1710" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+[[Назад|Start]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="20" name="Acquire heavy artillery" tags="" position="8398,1710" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
+
 &lt;&lt;if $hardArtillery === true&gt;&gt;
 &lt;&lt;goto [[Artillery has already]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
 	Это уменьшит количество денег. Вы уверены что хотите это сделать?
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Ок|Artillery acquired]]
-[[Нет|Strengthen one group]]</tw-passagedata><tw-passagedata pid="21" name="Expand the rights of peasants" tags="" position="8705,1706" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+[[Нет|Strengthen one group]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="21" name="Expand the rights of peasants" tags="" position="8705,1706" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
+
 &lt;&lt;if $chrestRights === true&gt;&gt;
 &lt;&lt;goto [[Rights of peasants have already expanded]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $chrestRights to true&gt;&gt;
+&lt;&lt;set $chrestRights to true, $popularWithChristians += 5, $popularWithArmy -= 10, $popularWithPolice -=10&gt;&gt;
 	Права крестьян расширены.
 	&lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;	
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Ок|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="22" name="Let the peasants own their police" tags="" position="8902,1710" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+[[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="22" name="Let the peasants own their police" tags="" position="8902,1710" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 &lt;&lt;if $christPolice === true&gt;&gt;
 &lt;&lt;goto [[Christians have already owned their police]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $christPolice to true&gt;&gt;
+&lt;&lt;set $christPolice to true, $popularWithChristians += 5, $popularWithArmy -= 10, $popularWithPolice -= 10&gt;&gt;
 	  Вы позволили крестьянам свою полицию
 	  Эта операция не будет ничего стоить
 	  &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;	
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Ок|Start]]
 [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+
 
 </tw-passagedata><tw-passagedata pid="23" name="Ask for a loan from Russians" tags="" position="7302,1705" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Ты пытаешься попросить займа у русских. Это увеличит количество денег.
+  Ты пытаешься попросить займа у русских. Это увеличит количество денег.
 &lt;/div&gt;
-[[Ок|Russia helped]]
-[[Нет|Improve finance]]
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Ок|Russia helped]]
+  [[Нет|Improve finance]]
+&lt;/div&gt;
+
 </tw-passagedata><tw-passagedata pid="24" name="Ask for help from Amer" tags="" position="7498,1707" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;message&quot;&gt;
   Ты пытаешься попросить помощи у американцев. Хммм... у них и так национальный долг большой, но думаю они тебе смогут помочь.
 &lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;
 [[Ок|Americans agreed to help]]
-[[Нет|Improve finance]]</tw-passagedata><tw-passagedata pid="25" name="Nationalize enterprises Leftotos" tags="" position="7798,1705" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+[[Нет|Improve finance]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="25" name="Nationalize enterprises Leftotos" tags="" position="7798,1705" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
+
 &lt;&lt;if $leftotoFactory === true || $leftotoMyFriend === false&gt;&gt;
 &lt;&lt;goto [[Leftotos enterprises already Nationalize]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
 	Ты серьезно хочешь национализирвоать предпр. лефтото. Это конечно увеличит казну, но не думаю что это хорошо скажется на твоей популярности
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Ок|Leftotos enterprises have Nationalize]]
 [[Нет|Improve finance]]
+&lt;/div&gt;
+
 </tw-passagedata><tw-passagedata pid="26" name="State" tags="" position="6200,0" size="100,100">&lt;&lt;display [[Buttons]]&gt;&gt;
 &lt;&lt;display [[ResoursesState]]&gt;&gt;
 &lt;&lt;set 	
@@ -527,13 +670,16 @@ a:hover:after{
 &lt;&lt;goto [[Greeting]]&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;goto [[Month]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="NewMonth" tags="" position="6201.666666666667,601.3333333333333" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="NewMonth" tags="" position="6204,699" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
   &lt;&lt;if $month !== 1&gt;&gt;
     &lt;&lt;set $coin -= $expenses, $expenses += 10&gt;&gt;
   &lt;&lt;/if&gt;&gt;
+  
   &lt;div class=&quot;message&quot;&gt;
 	  $message.message
   &lt;/div&gt;
+  
   &lt;div class=&quot;buttons&quot;&gt;
   
   &lt;&lt;if $message.button1&gt;&gt;
@@ -561,39 +707,68 @@ a:hover:after{
   &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="28" name="Police liquidated" tags="" position="2899,1908" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;set $expenses = $expenses - 8, $secretPolice to false, $popularWithPolice to 0&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   Поздравляю!!! Ты только что ликвидировал тайную полицию. Единственные ребята, которые помогали тебе. Дальше будет интереснее, надеюсь ты купил себе вертолет!
-	&lt;&lt;display [[Resourses]]&gt;&gt;
+  &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="29" name="Free hosp seted" tags="" position="3712,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="29" name="Free hosp seted" tags="" position="3712,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Добро должно делаться конечно, но народу нужные не только бесплатные больницы!
+  Добро должно делаться конечно, но народу нужные не только бесплатные больницы!
 &lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="30" name="Weapon of Leftoto gone to America" tags="" position="4093,1908" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;&lt;set $coin += 50, $americanArms to true&gt;&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="30" name="Weapon of Leftoto gone to America" tags="" position="4093,1908" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;&lt;set $coin += 50, $popularWithArmy -= 10, $leftotoMyFriend to true, $americanArms to true&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   Оружие Лефтото только что было продано Американцам.
   &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="31" name="Mines was Sold to US firms" tags="" position="4493,1900" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;&lt;set $coin += 120, $firms to true&gt;&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="31" name="Mines was Sold to US firms" tags="" position="4493,1900" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;&lt;set $coin += 120, $popularWithAmericans += 10, $popularWithChristians -=20, $partisans -= 3, $firms to true&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   Ты удачно продал шахты фирмам США!
   &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="32" name="Naval base given to Russians" tags="" position="4895,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;&lt;set $expenses += 10, $seaToRussian to true&gt;&gt;
+[[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="32" name="Naval base given to Russians" tags="" position="4895,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;&lt;set $expenses += 10, $popularWithRussians += 10, $popularWithChristians -= 20, $partisans -= 4, $popularWithArmy -= 5, $seaToRussian to true&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   Ты отдал русским морскую базу
   &lt;&lt;display [[Resourses]]&gt;&gt;
-&lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="33" name="Money is over" tags="" position="4407.333333333333,102" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Money is over" tags="" position="4407,102" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;set 
 	$prevCoin to $coin, 
 	$prevPopularWithArmy to  $popularWithArmy,
@@ -604,20 +779,33 @@ a:hover:after{
 	$prevExpenses to $expenses,
 	$prevBank to $bank
 &gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   Денег не осталось
 &lt;&lt;if $popularWithRussians &gt; 50 || $popularWithAmericans &gt; 50&gt;&gt;
   но ты можешь:
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+
 &lt;&lt;if $popularWithRussians &gt; 50 || $popularWithAmericans &gt; 50&gt;&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Попросить помощи у Русских|Russians please help]]
 [[Попросить помощи у Америки|America please help]]
+&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;
+
 &lt;&lt;if $bank &gt; 0&gt;&gt;
+&lt;div class=&quot;buttons&quot;&gt;
 [[Опустошить банк|Empty the bank]]
+&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-[[Закончить игру|State]]</tw-passagedata><tw-passagedata pid="34" name="You not popular of christians" tags="" position="4899.333333333333,301" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+[[Закончить игру|State]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="You not popular of christians" tags="" position="4899,301" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;set 
 	$prevCoin to $coin, 
 	$prevPopularWithArmy to $popularWithArmy,
@@ -628,120 +816,186 @@ a:hover:after{
 	$prevExpenses to $expenses, 
 	$prevBank to $bank
 &gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Крестьяне не довольны тем, что ты плохо управляешь страной, они вышли протестовать! Стоит угомонить их!
+	
 &lt;&lt;if $popularWithArmy &lt;= 20 &amp;&amp; $popularWithPolice &lt;= 20 &amp;&amp; $popularWithRussians &lt;= 50 &amp;&amp; $popularWithAmericans &lt;= 50 &amp;&amp; !$helicopter&gt;&gt;
 	Твое правление подошло к концу. Ты не смог справиться с протестами крестьян и тебя сняли с поста главы, а так же выписали штраф за твои деяния.
 &lt;&lt;/if&gt;&gt;
+
 	&lt;img class=&quot;miting&quot; src=&quot;https://loapits.github.io/political-game/img/miting-of-christians.png&quot;&gt;
 &lt;/div&gt;
+
 &lt;div class=&quot;buttons&quot;&gt;
+
 &lt;&lt;if $popularWithArmy &gt; 20&gt;&gt;
 [[Спустить на них армию|Army against crists]]
 &lt;&lt;/if&gt;&gt;
+
 &lt;&lt;if $popularWithPolice &gt; 20&gt;&gt;
 [[Я верю в свою полицию|Police against crists]]
 &lt;&lt;/if&gt;&gt;
+
 &lt;&lt;if $bank &gt; 0&gt;&gt;
 [[Откупиться|Goodbye bank]]
 &lt;&lt;/if&gt;&gt;
+
 &lt;&lt;if $helicopter === true&gt;&gt;
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
+
 [[Закончить игру|Previous Game]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="Police have improved" tags="" position="5697,1914" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;&lt;set $expenses += 6, $improveSecretPolice to true&gt;&gt;
+
+&lt;&lt;set $expenses += 6, $popularWithChristians -=20, $partisans -= 3, $hardWithPolice += 7, $improveSecretPolice to true&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   Ты резко усилил тайную полицию
   &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="36" name="Bodyguards has improved" tags="" position="6095,1915" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="36" name="Bodyguards has improved" tags="" position="6093,1908" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if  $coin &lt;= 0&gt;&gt;
 &lt;&lt;goto [[No money]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
-&lt;&lt;set $coin -= 40, $bodyguard to true&gt;&gt;
+&lt;&lt;set $coin -= 100, $hardWithArmy += 7, $popularWithChristians-= 20, $partisans-= 3, $bodyguard to true&gt;&gt;
   Ты усилил личную охрану
   &lt;&lt;display [[Resourses]]&gt;&gt;
-&lt;/div&gt;	
+&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="37" name="Just bought a helicopter" tags="" position="6294,1912" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="37" name="Just bought a helicopter" tags="" position="6294,1912" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if  $coin &lt;= 0&gt;&gt;
 &lt;&lt;goto [[No money]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $coin -= 4000, $helicopter to true&gt;&gt;
+&lt;&lt;set $coin -= 400, $helicopter to true&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   Ты купил вертолет! Теперь у тебя есть возможность убежать, если поднимут восстание против тебя!
   &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
 &lt;&lt;/if&gt;&gt;
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="38" name="Replenished an account in a Swiss bank" tags="" position="6691,1912" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="38" name="Replenished an account in a Swiss bank" tags="" position="6691,1912" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if  $coin &lt;= 0&gt;&gt;
 &lt;&lt;goto [[No money]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $coin -= 740, $bank += 14440, $addToBank to true&gt;&gt;
+&lt;&lt;set $coin -= 700, $bank += 700, $addToBank to true&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   Ты пополнили швейцарский банк
   &lt;&lt;display [[Resourses]]&gt;&gt;
   Счет в Швецарском банке: $bank
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+
 </tw-passagedata><tw-passagedata pid="39" name="Leftotos enterprises have Nationalize" tags="" position="7697,1906" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;&lt;set $coin += 130, $leftotoFactory to true&gt;&gt;
+
+&lt;&lt;set $coin += 100, $popularWithChristians += 10, $partisans -= 5, $leftotoFactory to true&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   Ты национализирвоал предпр. лефтото!
   &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="40" name="Russia helped" tags="" position="7302,1902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;&lt;if $virus === true&gt;&gt;
-&lt;&lt;goto [[Communication error]]&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;if $popularWithRussians &lt; 10&gt;&gt;
-&lt;&lt;goto [[Not popular with neighbors]]&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set $coin += 440&gt;&gt;
-&lt;div class=&quot;message&quot;&gt;
-	Россия помогла тебе, думаю все будет нормально, но доверие к тебе пошатнулось.
-	&lt;&lt;display [[Resourses]]&gt;&gt;
-&lt;/div&gt;	
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Улучшить положение еще|Start]]
 [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="40" name="Russia helped" tags="" position="7302,1902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;&lt;if $virus === true&gt;&gt;
+&lt;&lt;goto [[Communication error]]&gt;&gt;
+
+&lt;&lt;else&gt;&gt;
+
+&lt;&lt;if $popularWithRussians &lt; 10&gt;&gt;
+&lt;&lt;goto [[Not popular with neighbors]]&gt;&gt;
+
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set $coin += 1000, $popularWithRussians -=5&gt;&gt;
+&lt;div class=&quot;message&quot;&gt;
+Россия помогла тебе, думаю все будет нормально, но доверие к тебе пошатнулось.
+&lt;&lt;display [[Resourses]]&gt;&gt;
+&lt;/div&gt;	
+
+&lt;div class=&quot;buttons&quot;&gt;
+[[Улучшить положение еще|Start]]
+[[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Americans agreed to help" tags="" position="7500,1906" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $virus === true&gt;&gt;
 &lt;&lt;goto [[Communication error]]&gt;&gt;
 &lt;&lt;else&gt;&gt;
+
 &lt;&lt;if $popularWithRussians &lt; 10&gt;&gt;
 &lt;&lt;goto [[Not popular with neighbors]]&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $coin += 440&gt;&gt;
+
+&lt;&lt;set $coin += 1000, $popularWithAmericans -= 5&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Американцы согласились дать тебе денег!
 	&lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Улучшить положение еще|Start]]
 [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="Artillery acquired" tags="" position="8302,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if  $coin &lt;= 0&gt;&gt;
 &lt;&lt;goto [[No money]]&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $coin -= 50&gt;&gt;
+&lt;&lt;set $coin -= 400&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Ты приобрел тяжелую артилерию
 	&lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Улучшить положение еще|Start]]
 [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="Switch month" tags="" position="6199,2406" size="100,100">&lt;&lt;set $month += 1, $addToBank to false&gt;&gt;
 &lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Month" tags="" position="6200,305" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;set $message to either($arr)&gt;&gt;
+
 &lt;&lt;if $coin &lt;= 0 &gt;&gt;
 &lt;&lt;goto [[Money is over]]&gt;&gt;
 
@@ -751,66 +1005,94 @@ a:hover:after{
 &lt;&lt;elseif $partisans &lt;= 0 &gt;&gt;
 &lt;&lt;goto [[Revolution]]&gt;&gt;
 
-&lt;&lt;elseif $expenses &lt;= 0 &gt;&gt;
-&lt;&lt;goto [[Money is over]]&gt;&gt;
-
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
   $month Месяц
 &lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;
 [[Начать|NewMonth]]
+&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="45" name="Previous Game" tags="" position="6600.000000000001,98.99999999999994" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="45" name="Previous Game" tags="" position="6606,94" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-&lt;div class=&quot;title&quot;&gt;
- 	  Ты проиграл :( Твои успехи:
-&lt;/div&gt;	
-&lt;div&gt;
-  	Деньги: $prevCoin
+
+  &lt;div class=&quot;title&quot;&gt;
+	Ты проиграл :( Твои успехи:
+  &lt;/div&gt;	
+
+  &lt;div&gt;
+  Деньги: $prevCoin
+  &lt;/div&gt;
+
+&lt;div class=&quot;popular&quot;&gt;
+  &lt;div&gt;
+  Популярность:
+  &lt;/div&gt;
+  
+  &lt;div&gt;
+  Армия: $prevPopularWithArmy
+  Крестьяне: $prevPopularWithChristians
+  Тайная полиция: $prevPopularWithPolice
+  &lt;/div&gt;
+  
 &lt;/div&gt;
 &lt;div class=&quot;popular&quot;&gt;
-&lt;div&gt;
-	Популярность:
+
+  &lt;div&gt;
+  Дипломатические отношения:
+  &lt;/div&gt;
+  
+  &lt;div&gt;
+  Россия: $prevPopularWithRussians
+  Америка: $prevPopularWithAmericans
+  &lt;/div&gt;
+  
 &lt;/div&gt;
-&lt;div&gt;
-	Армия: $prevPopularWithArmy
-	Крестьяне: $prevPopularWithChristians
-	Тайная полиция: $prevPopularWithPolice
+
+  &lt;div&gt;
+  Месячные расходы: $prevExpenses
+  &lt;/div&gt;
+  
+  &lt;div&gt;
+  Ваши накопления в Швейцарском банке: $prevBank
+  &lt;/div&gt;
+  
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;popular&quot;&gt;
-&lt;div&gt;
-	Дипломатические отношения:
-&lt;/div&gt;
-&lt;div&gt;
-	Россия: $prevPopularWithRussians
-	Америка: $prevPopularWithAmericans
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div&gt;
-	Месячные расходы: $prevExpenses
-&lt;/div&gt;
-&lt;div&gt;
-  	Ваши накопления в Швейцарском банке: $prevBank
-&lt;/div&gt;
-&lt;/div&gt;
-[[Попробовать снова|Month]]</tw-passagedata><tw-passagedata pid="46" name="Greeting" tags="" position="6602.333333333334,300.99999999999994" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+[[Попробовать снова|Month]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Greeting" tags="" position="6602,300" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   $greeting
 &lt;/div&gt;
-[[Вперед к победе!|Month]]</tw-passagedata><tw-passagedata pid="47" name="Communication error" tags="" position="7498,2107" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+[[Вперед к победе!|Month]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Communication error" tags="" position="7498,2107" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Извини, но границы закрыты, в данный момент все коммуникации сведены к нулю из-за новостей о вирусе. Думаю что в следующем месяце обстановка наладится
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Ок|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="48" name="Helicopter already purchased" tags="" position="6491,1910" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;message&quot;&gt;
-	У тебя уже есть вертолет для побега, если что-то пойдет не так. Конечно ты бы мог купить и еще один, но лучше уже потратить деньги на государство. А то еще люди узнают.
+[[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-[[Да наверное правда|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="49" name="New month" tags="" position="6456.333333333334,476.66666666666663" size="100,100">&lt;&lt;set 
+</tw-passagedata><tw-passagedata pid="48" name="Helicopter already purchased" tags="" position="6491,1910" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;message&quot;&gt;
+  У тебя уже есть вертолет для побега, если что-то пойдет не так. Конечно ты бы мог купить и еще один, но лучше уже потратить деньги на государство. А то еще люди узнают.
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Да наверное правда|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="49" name="New month" tags="" position="6456,476" size="100,100">&lt;&lt;set 
   $month += 1,
   $virus to false,
   $improveSecretPolice to false,
@@ -857,186 +1139,215 @@ a:hover:after{
 &lt;/div&gt;
 &lt;div&gt;
   Месячные расходы: $expenses
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="Buttons" tags="" position="6003.333333333333,3.3333333333333357" size="100,100">&lt;&lt;set 
-	$message1 to {
-		message: &quot;Приехавшие из отпусков и командировок граждане рассказывали о каком-то новом вирусе, который стремительными темпами развивается. Если он проберется и сюда, то весело точно не будет. Советую приостановить внешние коммуникации, дабы этот вирус не попал к нам.&quot;,
-		button1: &quot;Ввести карантин&quot;,
-		button2: &quot;Они ошибаются&quot;,
-		countBtn1: &#96;&lt;&lt;set
-			$expenses  += 20,
-			$popularWithArmy +=10,
-			$popularWithPolice += 10,
-			$popularWithChristians -= 20,
-			$partisans -= 1
-		&gt;&gt;&#96;,
-		countBtn2: &#96;&lt;&lt;set
-			$popularWithArmy -=10,
-			$popularWithPolice -= 10,
-			$popularWithChristians += 20
-		&gt;&gt;&#96;
-	},
-	$message2 to {
-		message: &quot;Крестьяне просят предоставить частным фермерским хозяйствам налоговые каникулы.&quot;,
-		button1: &quot;Почему бы и нет...&quot;,
-		button2: &quot;А не слишком ли жирно будет?&quot;,
-		countBtn1: &#96;&lt;&lt;set 
-			$expenses += 20,
-			$popularWithChristians += 20
-		&gt;&gt;&#96;,
-		countBtn2: &#96;&lt;&lt;set
-			$partisans -= 3,
-			$popularWithChristians -= 10
-		&gt;&gt;&#96;,
-		effect1: &quot;Месячные расходы возрастают&quot;,
-		effect2: &quot;Месячные расходы остались прежними, однако вы потеряли часть доверия у крестиан&quot;
-	},
-	$message3 to {
-		message: &quot;Скоро праздник 8 марта! Стоило бы устроить празднование на площади!&quot;,
-		button1: &quot;Я за равные права для женщин&quot;,
-		button2: &quot;Ахахах. Самому смешно&quot;,
-		countBtn1: &#96;&lt;&lt;set
-			$coin -= 500,
-			$popularWithChristians += 7,
-			$popularWithArmy -= 16,
-			$partisans += 1
-		&gt;&gt;&#96;,
-		countBtn2: &#96;&lt;&lt;set 
-			$popularWithChristians -= 25,
-			$popularWithArmy += 5,
-			$partisans -= 4
-		&gt;&gt;&#96;
-	},
-	$message4 to {
-		message: &quot;Пенсионеры просят разовую выплату на приобретение проездных билетов для посещения дачных участков, поликлиник и просто покататьсяю&quot;,
-		button1: &quot;Денег нет, но вы держитесь&quot;,
-		button2: &quot;Надо просто раздеваться и работать&quot;,
-		countBtn1: &#96;&lt;&lt;set 
-			$popularWithChristians -= 35,
-			$partisans -= 2,
-			$popularWithArmy += 5
-		&gt;&gt;&#96;,
-		countBtn2: &#96;&lt;&lt;set 
-			$coin -= 600,
-			$popularWithChristians += 8,
-			$popularWithArmy -= 15
-		&gt;&gt;&#96;,
-		effect1: &quot;Популярность сильно подорвана.&quot;,
-		effect2: &quot;Популярность улучшилась, при этом из казны были потрачены деньги.&quot;
-	},
-	$message5 to {
-		message: &quot;Не соизволит ли ваше диктаторское высочество разрешить провести митинг?&quot;,
-		button1: &quot;Я не потерплю протестов!&quot;,
-		countBtn1: &#96;&lt;&lt;set 
-			$popularWithChristians -= 25,
-			$partisans -= 5,
-			$popularWithArmy += 15,
-			$popularWithPolice += 10
-		&gt;&gt;&#96;,
-		effect1: &quot;Армия благодарна тебе, теперь не придется лишний раз напрягаться. А вот популярность значительно поуменьшилась!&quot;
-	},
-	$message6 to {
-		message: &quot;Тебя посетил твой злейший друг - правитель Лефтото!&quot;,
-		button1: &quot;Угостить его мороженым&quot;,
-		button2: &quot;Покататься с ним на подводной лодке&quot;,
-		button3: &quot;Полетать с ним вертолёте&quot;,
-		
-		countBtn1: &#96;&lt;&lt;set $leftotoMyFriend to false&gt;&gt;&#96;,
-		countBtn2: &#96;&lt;&lt;set $leftotoMyFriend to false&gt;&gt;&#96;,
-		countBtn3: &#96;&lt;&lt;set $leftotoMyFriend to false&gt;&gt;&#96;,
-		effect1: &#96;Мороженое случайно оказывается радужным и с великолепным названием &quot;Радуга&quot;. Правитель в недоумении.&#96;,
-		effect2:&#96;Упс. У него клаустрофобия. Кажется он очень сильно возненавидит тебя после этого.&#96;,
-		effect3: &#96;Он же высоты боится. Ну все, теперь точно конец отношений между Лефтото и нашей страной.&#96;,
-	},
-	$message7 to {
-		message: &quot;Один особо опасный журналист что-то много себе позволяет...&quot;,
-		button1: &quot;Завести уголовное дело&quot;,
-		button2: &quot;Позвонить ему лично&quot;,
-		button3: &quot;Убить&quot;,
-		countBtn1: &#96;&lt;&lt;set $coin += 0&gt;&gt;&#96;,
-		countBtn2: &#96;&lt;&lt;set $coin += 0&gt;&gt;&#96;,
-		countBtn3: &#96;&lt;&lt;set $coin -= 0&gt;&gt;&#96;
-	},
-	$message8 to {
-		message: &quot;Тайная полиция узнала, что министр обороны смешно пошутил про Вас.&quot;,
-		button1: &quot;Отстранить от должности&quot;,
-		button2: &quot;Расстрелять из гранатомёта&quot;,
-		button3: &quot;Провести показательный процесс&quot;,
-		countBtn1: &#96;&lt;&lt;set $coin += 0, $vicePresident&gt;&gt;&#96;,
-		countBtn2: &#96;&lt;&lt;set $coin += 0&gt;&gt;&#96;,
-		countBtn3: &#96;&lt;&lt;set $coin -= 0&gt;&gt;&#96;
-	},
-	$message9 to {
-		message: &quot;Провести обыски в квартирах генералов армии или полковников тайной полиции&quot;,
-		button1: &quot;У генералов армии&quot;,
-		button2: &quot;У полковников Т.П.&quot;,
-		countBtn1: &#96;&lt;&lt;set $coin += 0, $vicePresident to false&gt;&gt;&#96;,
-		countBtn2: &#96;&lt;&lt;set $coin += 0, $secretPolice to false&gt;&gt;&#96;
-	}
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="Buttons" tags="" position="6003,0" size="100,100">&lt;&lt;set 
+$message1 to {
+  message: &quot;Приехавшие из отпусков и командировок граждане рассказывали о каком-то новом вирусе, который стремительными темпами развивается. Если он проберется и сюда, то весело точно не будет. Советую приостановить внешние коммуникации, дабы этот вирус не попал к нам.&quot;,
+  button1: &quot;Ввести карантин&quot;,
+  button2: &quot;Они ошибаются&quot;,
+  countBtn1: &#96;&lt;&lt;set
+  $expenses  += 20,
+  $popularWithArmy +=10,
+  $popularWithPolice += 10,
+  $popularWithChristians -= 20,
+  $partisans -= 1,
+  &gt;&gt;&#96;,
+  countBtn2: &#96;&lt;&lt;set
+  $popularWithArmy -=10,
+  $popularWithPolice -= 10,
+  $popularWithChristians += 20
+  &gt;&gt;&#96;,
+  goNext: &quot;Ок&quot;
+},
+$message2 to {
+  message: &quot;Крестьяне просят предоставить частным фермерским хозяйствам налоговые каникулы.&quot;,
+  button1: &quot;Почему бы и нет...&quot;,
+  button2: &quot;А не слишком ли жирно будет?&quot;,
+  countBtn1: &#96;&lt;&lt;set 
+  $expenses += 20,
+  $popularWithChristians += 20
+  &gt;&gt;&#96;,
+  countBtn2: &#96;&lt;&lt;set
+  $partisans -= 3,
+  $popularWithChristians -= 10
+  &gt;&gt;&#96;,
+  effect1: &quot;Месячные расходы возрастают&quot;,
+  effect2: &quot;Месячные расходы остались прежними, однако вы потеряли часть доверия у крестиан&quot;,
+  goNext: &quot;Ок&quot;
+},
+$message3 to {
+  message: &quot;Скоро праздник 8 марта! Стоило бы устроить празднование на площади!&quot;,
+  button1: &quot;Я за равные права для женщин&quot;,
+  button2: &quot;Ахахах. Самому смешно&quot;,
+  countBtn1: &#96;&lt;&lt;set
+  $coin -= 500,
+  $popularWithChristians += 7,
+  $popularWithArmy -= 16,
+  $partisans += 1
+  &gt;&gt;&#96;,
+  countBtn2: &#96;&lt;&lt;set 
+  $popularWithChristians -= 25,
+  $popularWithArmy += 5,
+  $partisans -= 4
+  &gt;&gt;&#96;,
+  goNext: &quot;Ок&quot;
+},
+  $message4 to {
+  message: &quot;Пенсионеры просят разовую выплату на приобретение проездных билетов для посещения дачных участков, поликлиник и просто покататься.&quot;,
+  button1: &quot;Денег нет, но вы держитесь&quot;,
+  button2: &quot;Надо просто раздеваться и работать&quot;,
+  countBtn1: &#96;&lt;&lt;set 
+  $popularWithChristians -= 35,
+  $partisans -= 2,
+  $popularWithArmy += 5
+  &gt;&gt;&#96;,
+  countBtn2: &#96;&lt;&lt;set 
+  $coin -= 600,
+  $popularWithChristians += 8,
+  $popularWithArmy -= 15
+  &gt;&gt;&#96;,
+  effect1: &quot;Популярность сильно подорвана.&quot;,
+  effect2: &quot;Популярность улучшилась, при этом из казны были потрачены деньги.&quot;,
+  goNext: &quot;Ок&quot;
+},
+$message5 to {
+  message: &quot;Не соизволит ли ваше диктаторское высочество разрешить провести митинг?&quot;,
+  button1: &quot;Я не потерплю протестов!&quot;,
+  countBtn1: &#96;&lt;&lt;set 
+  $popularWithChristians -= 25,
+  $partisans -= 5,
+  $popularWithArmy += 15,
+  $popularWithPolice += 10
+  &gt;&gt;&#96;,
+  effect1: &quot;Армия благодарна тебе, теперь не придется лишний раз напрягаться. А вот популярность значительно поуменьшилась!&quot;,
+  goNext: &quot;Ок&quot;
+},
+$message6 to {
+  message: &quot;Тебя посетил твой злейший друг - правитель Лефтото!&quot;,
+  button1: &quot;Угостить его мороженым&quot;,
+  button2: &quot;Покататься с ним на подводной лодке&quot;,
+  button3: &quot;Полетать с ним вертолёте&quot;,
+
+  countBtn1: &#96;&lt;&lt;set $leftotoMyFriend to false&gt;&gt;&#96;,
+  countBtn2: &#96;&lt;&lt;set $leftotoMyFriend to false&gt;&gt;&#96;,
+  countBtn3: &#96;&lt;&lt;set $leftotoMyFriend to false&gt;&gt;&#96;,
+  effect1: &#96;Мороженое случайно оказывается радужным и с великолепным названием &quot;Радуга&quot;. Правитель в недоумении.&#96;,
+  effect2:&#96;Упс. У него клаустрофобия. Кажется он очень сильно возненавидит тебя после этого.&#96;,
+  effect3: &#96;Он же высоты боится. Ну все, теперь точно конец отношениям между Лефтото и нашей страной.&#96;,
+  goNext: &quot;Ок&quot;
+},
+$message7 to {
+  message: &quot;Один особо опасный журналист что-то много себе позволяет...&quot;,
+  button1: &quot;Завести уголовное дело&quot;,
+  button2: &quot;Позвонить ему лично&quot;,
+  button3: &quot;Убить&quot;,
+  countBtn1: &#96;&lt;&lt;set $popularWithArmy += 10, $popularWithPolice += 15, $popularWithChristians -= 15&gt;&gt;&#96;,
+  countBtn2: &#96;&lt;&lt;set coin -= 100&gt;&gt;&#96;,
+  countBtn3: &#96;&lt;&lt;set $popularWithArmy += 10, $popularWithChristians += 10&gt;&gt;&#96;,
+  goNext: &quot;Ок&quot;
+},
+$message8 to {
+  message: &quot;Тайная полиция узнала, что министр обороны смешно пошутил про тебя&quot;,
+  button1: &quot;Отстранить от должности&quot;,
+  button2: &quot;Расстрелять из винтовки&quot;,
+  button3: &quot;Провести показательный процесс&quot;,
+  countBtn1: &#96;&lt;&lt;set $popularWithArmy -= 20, $vicePresident to false&gt;&gt;&#96;,
+  countBtn2: &#96;&lt;&lt;set $popularWithArmy -= 15, $vicePresident to false&gt;&gt;&#96;,
+  countBtn3: &#96;&lt;&lt;set $popularWithArmy -= 22, $vicePresident to false&gt;&gt;&#96;,
+  effect1: &#96;Отстранен за утрату доверия. Дошутился.&#96;,
+  effect2: &#96;Нечего было шутить.&#96;,
+  effect3: &#96;Нечего было шутить.&#96;,
+  goNext: &quot;Ок&quot;
+},
+$message9 to {
+  message: &quot;Провести обыски в квартирах генералов армии или полковников тайной полиции&quot;,
+  button1: &quot;У генералов армии&quot;,
+  button2: &quot;У полковников Т.П.&quot;,
+  countBtn1: &#96;&lt;&lt;set $vicePresident to false, $popularWithArmy to 0&gt;&gt;&#96;,
+  countBtn2: &#96;&lt;&lt;set $secretPolice to false, $popularWithPolice to 0&gt;&gt;&#96;,
+  goNext: &quot;Ок&quot;
+}
 &gt;&gt;
 
 &lt;&lt;set $arr to [$message1, $message2, $message3, $message4, $message5, $message6, $message7, $message8, $message9]&gt;&gt;
 &lt;&lt;set $message to either($arr)&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="ResoursesState" tags="" position="5802,2" size="100,100">&lt;&lt;set
-	//Resourses
-	$coin to 4000,
-	$popularWithArmy to  100,
-	$popularWithChristians to  100,
-	$popularWithPolice to  100,
-	
-	$hardWithArmy to 3,
-	$hardWithChristians to 2,
-	$hardWithPolice to 4,
-	
-	$popularWithRussians to  100,
-	$popularWithAmericans to  100,
-	
-	$hardWithRussians to  5,
-	$hardWithAmericans to  5,
-	
-	$helicopter to false,
-	$expenses to 50,
-	$bank to 0,
-	$month to 1,
-	
-	$partisans to 15,
-	$partisansHards to 12,
-	
-	$virus to false,
-	$secretPolice to true, 
-	$improveSecretPolice to false,
-	$addToBank to false,
-	$vicePresident to false,
-	$selfManagement to false,
-	$leftotoFactory to false,
-	$leftotoMyFriend to true,
-	$americanArms to false,
-	$firms to false,
-	$seaToRussian to false,
-	$hardArtillery to false,
-	$chrestRights to false, 
-	$christPolice to false, 
-	$bodyguard to false,
-	$taxes to false,
-	$popularCompany to false,
-	$freeHosp to false
+  //Resourses
+  $coin to 4000,
+  $popularWithArmy to  100,
+  $popularWithChristians to  100,
+  $popularWithPolice to  100,
+
+  $hardWithArmy to 0,
+  $hardWithChristians to 0,
+  $hardWithPolice to 0,
+
+  $popularWithRussians to  0,
+  $popularWithAmericans to  0,
+
+  $hardWithRussians to  5,
+  $hardWithAmericans to  5,
+
+  $helicopter to false,
+  $expenses to 50,
+  $bank to 0,
+  $month to 1,
+
+  $partisans to 15,
+  $partisansHards to 12,
+
+  $virus to false,
+  $secretPolice to true, 
+  $improveSecretPolice to false,
+  $addToBank to false,
+  $vicePresident to false,
+  $selfManagement to false,
+  $leftotoFactory to false,
+  $leftotoMyFriend to true,
+  $americanArms to false,
+  $firms to false,
+  $seaToRussian to false,
+  $hardArtillery to false,
+  $chrestRights to false, 
+  $christPolice to false, 
+  $bodyguard to false,
+  $taxes to false,
+  $popularCompany to false,
+  $freeHosp to false
 &gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="Account already replenished" tags="" position="6892,1911" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Не думаю что все деньги из гос.бюджета стоит класть к себе на счет. Имей совесть, оставь и народу хотя бы что-то!
+  Не думаю что все деньги из гос.бюджета стоит класть к себе на счет. Имей совесть, оставь и народу хотя бы что-то!
 &lt;/div&gt;
-[[Надо помочь людям!|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="54" name="Do not let the military" tags="" position="3494,1899" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Надо помочь людям!|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="54" name="Do not let the military" tags="" position="3494,1899" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	На посту вице-президента и так уже военный. Я не думаю что между ними двумя будет особая разница.
+  На посту вице-президента и так уже военный. Я не думаю что между ними двумя будет особая разница.
 &lt;/div&gt;	
-[[Сделаю что-нибудь другое тогда|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="55" name="Landowner dont manager" tags="" position="3895,1905" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Сделаю что-нибудь другое тогда|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="55" name="Landowner dont manager" tags="" position="3895,1905" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Слишком много власти не есть хорошо. Лучше не пускать все на самотек, а то могут революцию поднять.
+  Слишком много власти не есть хорошо. Лучше не пускать все на самотек, а то могут революцию поднять.
+
 &lt;&lt;if $addToBank === true&gt;&gt;
-		И не забывай про то, чьи деньги ты положил себе на счет. Еще узнают все. Не стоит рисковать!
+  И не забывай про то, чьи деньги ты положил себе на счет. Еще узнают все. Не стоит рисковать!
 &lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[И то верно|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
 &lt;/div&gt;	
-[[И то верно|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="56" name="Leftotos enterprises already Nationalize" tags="" position="7898,1906" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="56" name="Leftotos enterprises already Nationalize" tags="" position="7898,1906" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	&lt;&lt;if $leftotoFactory === true&gt;&gt;
 	Предприятия Лефтото уже национализированы. Больше этого сделать не получится!
@@ -1044,167 +1355,295 @@ a:hover:after{
 	Правитель этой страны еще долго будет припоминать тебе тот случай. Вообщем забудь об этом варианте.
 	&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;	
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Окей, попробую другое|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="57" name="Weapons already sold to America" tags="" position="4290,1910" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+[[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="57" name="Weapons already sold to America" tags="" position="4290,1910" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Ты уже продал Американцам оружие из Лефтото. Больше продавать нечего. Но ты можешь продать оставшуюся страну, уверен жители обрадуются!
+  Ты уже продал Американцам оружие из Лефтото. Больше продавать нечего. Но ты можешь продать оставшуюся страну, уверен жители обрадуются!
 &lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="58" name="Мine to firms" tags="" position="4696,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="58" name="Мine to firms" tags="" position="4696,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   Ну ты обнаглевший... И так все разворовали, чего еще тебе нужно?
 &lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="59" name="Russian has a naval base" tags="" position="5098,1905" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="59" name="Russian has a naval base" tags="" position="5098,1905" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Ты уже продал России военно-морскую базу.
+  Ты уже продал России военно-морскую базу.
 &lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="60" name="Artillery has already" tags="" position="8497,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="60" name="Artillery has already" tags="" position="8502,1899" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Артиллерия уже приобретена, нам уже девать ее некуда. Сделай что-нибудь другое!
 &lt;/div&gt;	
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Окей, попробовать другое|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="61" name="Rights of peasants have already expanded" tags="" position="8705.333333333334,1898.3333333333333" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+[[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="61" name="Rights of peasants have already expanded" tags="" position="8705,1898" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Не думаю что крестьянам нужно столько прав. Им хватит и того, что уже есть! Не надо давать им больше чем они заслуживают! Это опасно!
 &lt;/div&gt;	
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Окей, попробовать другое|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="62" name="Christians have already owned their police" tags="" position="8905.333333333334,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+[[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="62" name="Christians have already owned their police" tags="" position="8905,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	У крестьян уже есть своя полиция. Если сделать это снова, то полиции у крестьян будет больше чем самих крестьян.
 &lt;/div&gt;	
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Окей, попробовать другое|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="63" name="Improve secret police true" tags="" position="5489,1916" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;message&quot;&gt;
-	Тайная полиция уже усилена и на страже закона, думаю они справятся со своей задачей на все сто.
+[[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-[[Да наверное правда|Start]]</tw-passagedata><tw-passagedata pid="64" name="Russians please help" tags="" position="4205.333333333333,304" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="63" name="Improve secret police true" tags="" position="5489,1916" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;message&quot;&gt;
+  Тайная полиция уже усилена и на страже закона, думаю они справятся со своей задачей на все сто.
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Да наверное правда|Start]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="64" name="Russians please help" tags="" position="4205,304" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $popularWithRussians &gt; 50&gt;&gt;
+
 &lt;&lt;set $coin += 1000, $popularWithRussians to 0&gt;&gt;
 &lt;&lt;goto [[Month]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Россия отказывается помогать тебе. Думаю стоит пересмотерть свои способы ведения политики.
 &lt;/div&gt;
 
+&lt;div class=&quot;buttons&quot;&gt;
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="65" name="America please help" tags="" position="4402.333333333333,302" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="65" name="America please help" tags="" position="4402,302" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $popularWithAmericans &gt; 50&gt;&gt;
+
 &lt;&lt;set $coin += 1000, $popularWithAmericans to 0&gt;&gt;
+
 &lt;&lt;goto [[Month]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Америка не будет давать тебе долг из-за политической ситуации.
 &lt;/div&gt;
 
+&lt;div class=&quot;buttons&quot;&gt;
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="Empty the bank" tags="" position="4602.333333333333,304" size="100,100">&lt;&lt;set $coin += $bank, $bank to 0 &gt;&gt;
+&lt;/div&gt;
+
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="Empty the bank" tags="" position="4602,304" size="100,100">&lt;&lt;set $coin += $bank, $bank to 0 &gt;&gt;
 &lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="67" name="No money" tags="" position="6194,2199" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;message&quot;&gt;
   Извини, но у тебя не хватает денег! Попробуй сначала увеличить количество денег в казне
 &lt;/div&gt;
-[[Улучшить положение|Start]]</tw-passagedata><tw-passagedata pid="68" name="Not popular with neighbors" tags="" position="7295,2104" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;
+[[Улучшить положение|Start]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="68" name="Not popular with neighbors" tags="" position="7295,2104" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Тебе не будут помогать, т.к. у тебя нет достаточного авторитета среди них! Сначала лушче повысить популярность у них!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Ок|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="69" name="Bodyguards was improved" tags="" position="5895,1915" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+[[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="69" name="Bodyguards was improved" tags="" position="5898,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
   Личная охрана уже усилена и следит за твоей сохранностью!
   &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="70" name="Has been popular" tags="" position="2697,1908" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="70" name="Has been popular" tags="" position="2697,1908" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Компания популяризации уже проведена! Не думаю что стоит так часто это делать!
+  Компания популяризации уже проведена! Не думаю что стоит так часто это делать!
 &lt;/div&gt;	
-[[Улучшить положение еще|Start]]
-[[Закончить этот месяц|Switch month]]
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить положение еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+
 </tw-passagedata><tw-passagedata pid="71" name="Minimal taxes" tags="" position="2497,1907" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
-	Если выкрутить налоги в 0, то люди просто обленятся и не будут работать, это повлечет за собой очень плохие последствия.
+  В этом месяце больше нельзя уменьшить налоги.
 &lt;/div&gt;	
-[[Ок, тогда что-то другое|Start]]
-[[Закончить этот месяц|Switch month]]</tw-passagedata><tw-passagedata pid="72" name="Army against protests" tags="" position="5399.333333333333,500" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Ок, тогда что-то другое|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="72" name="Army against protests" tags="" position="5399,500" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $hardWithArmy &gt; $partisansHards&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Революция была подавлена, все виновные в ней жестоко наказаны.Теперь все, кто решит еще раз поднять революцию сто раз подумают, прежде чем еще раз подниматься против главы нашего государства. Военные были награждены за подвиг!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Продолжим управлять|Month]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Военные не смогли подавить революцию, теперь если ты не найдешь способ как уйти от сюда, тебя убьют!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 &lt;&lt;if $helicopter === true&gt;&gt;
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
+
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="Christians against protests" tags="" position="5402.333333333333,698" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="Christians against protests" tags="" position="5402,698" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $hardWithArmy &gt; $partisansHards&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Крестьяне готовы пойти в бой ради их великого правителя. Думаю что ты правильно управлял страной, раз они готовы ради тебя подавить революцию!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Так чего же мы ждем|Month]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	У крестьян не хватило сил чтобы справиться с протестантами. В следующий раз тебе стоит их больше прокачивать! Ты побежден!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 &lt;&lt;if $helicopter === true&gt;&gt;
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
+
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="Police against protests" tags="" position="5204.333333333333,897" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="Police against protests" tags="" position="5204,897" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $hardWithPolice &gt; $partisansHards&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Тайная полиция смогла найти способ подавления революции! Не зря они свой хлеб едят!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Так чего же мы ждем|Month]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Тайная полиция не смогла найти возможности подавить революцию! Тебя свергли!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 &lt;&lt;if $helicopter === true&gt;&gt;
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
+
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="America against protests" tags="" position="5195.333333333333,703" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="America against protests" tags="" position="5195,703" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $hardWithAmericans &gt; $partisansHards&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Америка помогла тебе в подавлении революции. Думаю с такими соседями ты не пропадешь
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Так чего же мы ждем|Month]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Америка отказалась помогать тебе. Ты неправильно выстроил внешнюю политику. В следующий раз стоит более детально продумать этот момент!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 &lt;&lt;if $helicopter === true&gt;&gt;
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
+
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="Get helicopter" tags="" position="5200.333333333333,503" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="Get helicopter" tags="" position="5200,503" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Поздравляю, ты смог смотаться из этой страны. Надеюсь ее жители не очень расстроятся и не решать гнаться за тобой. Теперь главное не возвращаться сюда, хуже будет...
 	&lt;img class=&quot;helicopter&quot; src=&quot;https://cs9.pikabu.ru/post_img/big/2020/01/20/5/1579503084188783428.png&quot;&gt;
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Начать игру заново|Previous Game]]
-</tw-passagedata><tw-passagedata pid="77" name="Russians against protests" tags="" position="5399.333333333333,898" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="77" name="Russians against protests" tags="" position="5399,898" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $hardWithRussians &gt; $partisansHards&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Россия очень сильно помогла тебе с подавление революции. Думаю в тяжелый для нее час ты бы тоже ей помог!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Да, это так! Продолжим|Month]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Россия решила что помогать тебе будет не выгодно с экономической и политической точек зрения. Ты не дождешься помощи от нее! Разбирайся с этим сам!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 &lt;&lt;if $helicopter === true&gt;&gt;
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
+
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="Revolution" tags="" position="5299.333333333333,298" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="Revolution" tags="" position="5299,298" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;set 
 	$prevCoin to $coin, 
 	$prevPopularWithArmy to $popularWithArmy,
@@ -1221,170 +1660,235 @@ a:hover:after{
 	$popularWithAmericans to 100,
 	$helicopter to true
 &gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	РЕВОЛЮЦИЯ! Партизаны решили устроить революцию против тебя.
+	
 &lt;&lt;if $popularWithChristians &lt;= 20 &amp;&amp; $popularWithArmy &lt;= 20 &amp;&amp; $popularWithPolice &lt;= 20 &amp;&amp; $popularWithRussians &lt;= 50 &amp;&amp; $popularWithAmericans &lt;= 50 &amp;&amp; !$helicopter&gt;&gt;
+
 	Не думаю что у тебя хватит сил дать им отпор, единственное что ты сейчас можешь сделать - это сдаться!
+	
 &lt;&lt;/if&gt;&gt;
+
 	&lt;img class=&quot;miting&quot; src=&quot;https://loapits.github.io/political-game/img/miting-of-partisans.png&quot;&gt;
+	
 &lt;/div&gt;
+
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;&lt;if $popularWithChristians &gt; 20&gt;&gt;
   [[Крестьяне вперед! За короля!|Christians against protests]]
   &lt;&lt;/if&gt;&gt;
+  
   &lt;&lt;if $popularWithArmy &gt; 20&gt;&gt;
   [[В бой моя доблестная армия!|Army against protests]]
   &lt;&lt;/if&gt;&gt;
+  
   &lt;&lt;if $popularWithRussians &gt; 50&gt;&gt;
   [[Попросить помощи у Русских|Russians against protests]]
   &lt;&lt;/if&gt;&gt;
+  
   &lt;&lt;if $popularWithAmericans &gt; 50&gt;&gt;
   [[Попросить помощи у Америки|America against protests]]
   &lt;&lt;/if&gt;&gt;
+  
   &lt;&lt;if $popularWithPolice &gt; 20&gt;&gt;
   [[Попросить помощи у полиции|Police against protests]]
   &lt;&lt;/if&gt;&gt;
+  
   &lt;&lt;if $helicopter === true&gt;&gt;
   [[Улететь от сюда!|Get helicopter]]
   &lt;&lt;/if&gt;&gt;
+  
   [[Закончить игру|Previous Game]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="Goodbye bank" tags="" position="4897.333333333333,501" size="100,100">&lt;&lt;set $coin += $bank, $bank to 0 &gt;&gt;
-&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="80" name="Army against crists" tags="" position="4896.333333333333,720" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="Goodbye bank" tags="" position="4897,501" size="100,100">&lt;&lt;set $coin += $bank, $bank to 0 &gt;&gt;
+&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="80" name="Army against crists" tags="" position="4896,720" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $hardWithArmy &gt; $hardWithChristians&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
-	
+	Армия сппавилась с митингами! Все обошлось!)
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Продолжим управлять|Month]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Сил армейцев не хватило чтобы остановить митинги крестьян. Теперь тебя свергнут.
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 &lt;&lt;if $bank &gt; 0&gt;&gt;
 [[Откупиться|Goodbye bank]]
 &lt;&lt;/if&gt;&gt;
+
 &lt;&lt;if $helicopter === true&gt;&gt;
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
+
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="81" name="Police against crists" tags="" position="4894.333333333333,901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="81" name="Police against crists" tags="" position="4894,901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;&lt;if $hardWithPolice &gt; $hardWithChristians&gt;&gt;
+
 &lt;div class=&quot;message&quot;&gt;
 	Тайная полиция нашла слабое место крестьян, теперь ты можешь надавить на него и продолжить правление!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 [[Так чего же мы ждем|Month]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Тайная полиция не смогла найти возможности противостоять крестьянам, все потеряно!
 &lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
 &lt;&lt;if $bank &gt; 0&gt;&gt;
 [[Откупиться|Goodbye bank]]
 &lt;&lt;/if&gt;&gt;
+
 &lt;&lt;if $helicopter === true&gt;&gt;
 [[Улететь от сюда!|Get helicopter]]
 &lt;&lt;/if&gt;&gt;
+
 [[Закончить игру|Previous Game]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="countButton1" tags="" position="5703.333333333334,796.3333333333333" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
-&lt;&lt;set $virus to true&gt;&gt;
+&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="82" name="countButton1" tags="" position="5703,896" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
+  &lt;&lt;set $virus to true&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $virus to false&gt;&gt;
+
+  &lt;&lt;set $virus to false&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $message.effect1&gt;&gt;
-	$message.countBtn1
-	&lt;div class=&quot;message&quot;&gt;
-	$message.effect1
-	&lt;/div&gt;
-	&lt;div class=&quot;buttons&quot;&gt;
-	[[Ок|Start]]
-	&lt;/div&gt;
+  $message.countBtn1
+
+  &lt;div class=&quot;message&quot;&gt;
+  $message.effect1
+  &lt;/div&gt;
+
+  &lt;div class=&quot;buttons&quot;&gt;
+  [[$message.goNext|Start]]
+  &lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
-	$message.countBtn1
-	&lt;&lt;goto [[Start]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="countButton2" tags="" position="5908.333333333334,799.6666666666666" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
-&lt;&lt;set $virus to true&gt;&gt;
+
+  $message.countBtn1
+  &lt;&lt;goto [[Start]]&gt;&gt;
+  
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="countButton2" tags="" position="5908,899" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
+  &lt;&lt;set $virus to true&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $virus to false&gt;&gt;
+  &lt;&lt;set $virus to false&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $message.effect2&gt;&gt;
-	$message.countBtn2
-	&lt;div class=&quot;message&quot;&gt;
-	$message.effect2
-	&lt;/div&gt;
-	&lt;div class=&quot;buttons&quot;&gt;
-	[[Ок|Start]]
-	&lt;/div&gt;
+
+$message.countBtn2
+
+&lt;div class=&quot;message&quot;&gt;
+$message.effect2
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+[[$message.goNext|Start]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
-	$message.countBtn2
-	&lt;&lt;goto [[Start]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="countButton3" tags="" position="6105,801.3333333333333" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
-&lt;&lt;set $virus to true&gt;&gt;
+  $message.countBtn2
+  &lt;&lt;goto [[Start]]&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="countButton3" tags="" position="6105,901" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
+  &lt;&lt;set $virus to true&gt;&gt;
+  
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $virus to false&gt;&gt;
+  &lt;&lt;set $virus to false&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $message.effect3&gt;&gt;
-	  $message.countBtn3
-	  &lt;div class=&quot;message&quot;&gt;
-	  $message.effect3
-	  &lt;/div&gt;
-	  &lt;div class=&quot;buttons&quot;&gt;
-	  [[Ок|Start]]
-	  &lt;/div&gt;
+
+$message.countBtn3
+&lt;div class=&quot;message&quot;&gt;
+  $message.effect3
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[$message.goNext|Start]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
-	  $message.countBtn3
-	  &lt;&lt;goto [[Start]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="85" name="countButton4" tags="" position="6298.333333333334,803" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
-&lt;&lt;set $virus to true&gt;&gt;
+  $message.countBtn3
+  &lt;&lt;goto [[Start]]&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="85" name="countButton4" tags="" position="6298,903" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
+  &lt;&lt;set $virus to true&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $virus to false&gt;&gt;
+  &lt;&lt;set $virus to false&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $message.effect4&gt;&gt;
-	$message.countBtn4
-	&lt;div class=&quot;message&quot;&gt;
-	$message.effect4
-	&lt;/div&gt;
-	&lt;div class=&quot;buttons&quot;&gt;
-	[[Ок|Start]]
-	&lt;/div&gt;
+$message.countBtn4
+
+&lt;div class=&quot;message&quot;&gt;
+  $message.effect4
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[$message.goNext|Start]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
-	$message.countBtn4
-	&lt;&lt;goto [[Start]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="countButton5" tags="" position="6503.333333333334,799.6666666666666" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
-&lt;&lt;set $virus to true&gt;&gt;
+  $message.countBtn4
+  &lt;&lt;goto [[Start]]&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="countButton5" tags="" position="6503,899" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
+  &lt;&lt;set $virus to true&gt;&gt;
+  
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $virus to false&gt;&gt;
+  &lt;&lt;set $virus to false&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $message.effect5&gt;&gt;
-	$message.countBtn5
-	&lt;div class=&quot;message&quot;&gt;
-	$message.effect5
-	&lt;/div&gt;
-	&lt;div class=&quot;buttons&quot;&gt;
-	[[Ок|Start]]
-	&lt;/div&gt;
+$message.countBtn5
+
+&lt;div class=&quot;message&quot;&gt;
+  $message.effect5
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[$message.goNext|Start]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
-	$message.countBtn5
-	&lt;&lt;goto [[Start]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="87" name="countButton6" tags="" position="6698.333333333335,798" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
-&lt;&lt;set $virus to true&gt;&gt;
+  $message.countBtn5
+  &lt;&lt;goto [[Start]]&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="87" name="countButton6" tags="" position="6698,898" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
+  &lt;&lt;set $virus to true&gt;&gt;
+  
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $virus to false&gt;&gt;
+  &lt;&lt;set $virus to false&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $message.effect6&gt;&gt;
-	$message.countBtn6
-	&lt;div class=&quot;message&quot;&gt;
-	$message.effect6
-	&lt;/div&gt;
-	&lt;div class=&quot;buttons&quot;&gt;
-	[[Ок|Start]]
-	&lt;/div&gt;
+$message.countBtn6
+
+&lt;div class=&quot;message&quot;&gt;
+  $message.effect6
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[$message.goNext|Start]]
+&lt;/div&gt;
+
 &lt;&lt;else&gt;&gt;
-	$message.countBtn6
-	&lt;&lt;goto [[Start]]&gt;&gt;
+  $message.countBtn6
+  &lt;&lt;goto [[Start]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
