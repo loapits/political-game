@@ -100,7 +100,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Political Games" startnode="23" creator="Twine" creator-version="2.3.8" ifid="93CD9D0B-BD73-4952-8907-411F4021E648" zoom="0.6" format="SugarCube" format-version="2.31.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#ui-bar{
+	<tw-storydata name="Political Games" startnode="23" creator="Twine" creator-version="2.3.9" ifid="93CD9D0B-BD73-4952-8907-411F4021E648" zoom="0.6" format="SugarCube" format-version="2.31.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#ui-bar{
 	display: none;
 }
 #story{
@@ -111,10 +111,9 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 html{
   	cursor: url('https://loapits.github.io/political-game/img/cursors/normal.cur'), default;
 }
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
     display: none;
 }
-
 br{
 	display: none;
 }
@@ -199,12 +198,18 @@ a:hover:after{
 }
 .buttons{
 	overflow-y: scroll;
+  	overflow: auto;
+	scrollbar-width: none;
+}
+.buttons::-webkit-scrollbar{
+  width: 0px;
+  background: transparent;
 }
 .buttons, .buttonsAll{
 	height: 400px;
 }
 .buttonsAll{
-	height: 70%;
+	height: auto;
 }
 .passage {
   	line-height: unset;
@@ -225,65 +230,6 @@ a:hover:after{
   	position: relative;
  	width: 700px; 
 } 
-.buttons::-webkit-scrollbar {
-    width: 0px;
- 	height: 0px;
-}
-.buttons::-moz-scrollbar {
-    background: rgba(0,0,0,0);
-    -moz-appearance: none;
-}
-.fog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: rgba(0,0,0,0);
-    background-size: cover;
-	z-index: -1;
-	opacity: 0.5;
-}
-.fog::before,
-.fog::after,
-.fog div::before, 
-.fog div::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat-y;
-}
-.fog div::before, 
-.fog div::after    {
-    left: 100%;
-}
-.fog::before, 
-.fog div::before {
-    background-image: url("https://loapits.github.io/political-game/img/fog-1.png");
-    animation: fogmove 20s linear 0s infinite;
-}
-.fog::after, 
-.fog div::after {
-    background-image: url("https://loapits.github.io/political-game/img/fog-2.png");
-    animation: fogmove 10s linear 0s infinite;
-}
-@keyframes fogmove {
-    from {
-        transform: translate3d(0, 0, 0);
-    }
-    to {
-        transform: translate3d(-100%, 0, 0);
-    }
-}
-.audio{
-	display: none;
-}
 
 /* Adaptive desctop */
 @media only screen and (min-width: 1920px){
@@ -716,17 +662,7 @@ a:hover:after{
 	favicon.type = "image/svg";
 	favicon.href = "https://loapits.github.io/political-game/img/favicon.svg";
 	document.head.appendChild(favicon);
-}());
-
-;(function () {
-	var audio = document.createElement("iframe");
-	audio.src = "https://loapits.github.io/political-game/media/01_the_frozen_throne.mp3";
-	audio.allow = "autoplay";
-	audio.className = "audio";	
-	document.body.appendChild(audio);
-}());</script><tw-tag name="fgnbf" color="red"></tw-tag>,<tw-tag name="new" color="purple"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="6198.333333333333,1102" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+}());</script><tw-tag name="fgnbf" color="red"></tw-tag>,<tw-tag name="new" color="purple"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="6198,1102" size="100,100">&lt;div class=&quot;message&quot;&gt;
 	&lt;&lt;display [[SecretPolice or nothing]]&gt;&gt;
 &lt;/div&gt;	
 &lt;div class=&quot;buttons&quot;&gt;
@@ -735,9 +671,7 @@ a:hover:after{
   [[Улучшить свои шансы|Improve chances]]
   [[Укрепить финансы|Improve finance]]
   [[Усилить одну группу|Strengthen one group]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="Please all groups" tags="" position="1004.3333333333334,1299" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;buttonsAll&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="Please all groups" tags="" position="1004,1299" size="100,100">&lt;div class=&quot;buttonsAll&quot;&gt;
 &lt;&lt;if $secretPolice === false&gt;&gt;
   [[Снизить общий уровень налогов|Reduce taxes]]
   [[Провести кампанию популяризации|To popularize]]
@@ -748,9 +682,7 @@ a:hover:after{
   [[Ликвидировать тайную полицию|Advice of eliminate Secret Police]]
 &lt;&lt;/if&gt;&gt;
 [[Назад|Start]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Suit one group" tags="" position="3500.3333333333335,1305.3333333333335" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;buttonsAll&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Suit one group" tags="" position="3500,1305" size="100,100">&lt;div class=&quot;buttonsAll&quot;&gt;
 
 &lt;&lt;if $secretPolice === false&gt;&gt;
   [[Сделать вицепрезидентом военного|Make Vice President Military]]
@@ -769,7 +701,7 @@ a:hover:after{
 &lt;&lt;/if&gt;&gt;
   [[Назад|Start]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="4" name="Make Vice President Military" tags="" position="2298.3333333333335,1706" size="100,100">&lt;&lt;if $vicePresident === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="4" name="Make Vice President Military" tags="" position="2298,1706" size="100,100">&lt;&lt;if $vicePresident === true&gt;&gt;
   &lt;&lt;goto [[Do not let the military]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
@@ -778,36 +710,34 @@ a:hover:after{
 
 
 
-</tw-passagedata><tw-passagedata pid="5" name="Open free hospitals" tags="" position="2797.3333333333335,1703" size="100,100">&lt;&lt;if $freeHosp === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="5" name="Open free hospitals" tags="" position="2797,1703" size="100,100">&lt;&lt;if $freeHosp === true&gt;&gt;
   &lt;&lt;goto [[Free hosp seted]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Free hosp will open]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="6" name="Give christians self-government" tags="" position="3301.3333333333335,1706" size="100,100">&lt;&lt;if $selfManagement === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="Give christians self-government" tags="" position="3301,1706" size="100,100">&lt;&lt;if $selfManagement === true&gt;&gt;
   &lt;&lt;goto [[Landowner dont manager]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;goto [[Christians have self-manager]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Sell Leftoto Amer weapon" tags="" position="3799.3333333333335,1702" size="100,100">&lt;&lt;if $americanArms === true&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Sell Leftoto Amer weapon" tags="" position="3799,1702" size="100,100">&lt;&lt;if $americanArms === true&gt;&gt;
   &lt;&lt;goto [[Weapons already sold to America]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Weapon of Leftoto gone to America]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Sell mines to US firms" tags="" position="4302.333333333333,1708" size="100,100">&lt;&lt;if $firms === true&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Sell mines to US firms" tags="" position="4302,1708" size="100,100">&lt;&lt;if $firms === true&gt;&gt;
   &lt;&lt;goto [[Мine to firms]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Mines was Sold to US firms]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="9" name="Give Russians a naval base" tags="" position="4804.333333333333,1705" size="100,100">&lt;&lt;if $seaToRussian === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="9" name="Give Russians a naval base" tags="" position="4804,1705" size="100,100">&lt;&lt;if $seaToRussian === true&gt;&gt;
   &lt;&lt;goto [[Russian has a naval base]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Naval base given to Russians]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Improve chances" tags="" position="6201.333333333333,1303.3333333333333" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;buttonsAll&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Improve chances" tags="" position="6201,1306" size="100,100">&lt;div class=&quot;buttonsAll&quot;&gt;
 &lt;&lt;if $secretPolice === false&gt;&gt;
   [[Резко усилить тайную полицию|Dramatically strengthen the secret police]]
   [[Усилить личную охрану|Strengthen bodyguard]]
@@ -821,26 +751,27 @@ a:hover:after{
 &lt;&lt;/if&gt;&gt;
   [[Назад|Start]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="11" name="Dramatically strengthen the secret police" tags="" position="5500.333333333333,1701" size="100,100">&lt;&lt;if $improveSecretPolice === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="11" name="Dramatically strengthen the secret police" tags="" position="5500,1701" size="100,100">&lt;&lt;if $improveSecretPolice === true&gt;&gt;
   &lt;&lt;goto [[Improve secret police true]]&gt;&gt;
-
+&lt;&lt;elseif $secretPolice === false&gt;&gt;
+  &lt;&lt;goto [[Secret police is liquidate]]&gt;&gt;
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Police have improved]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="12" name="Strengthen bodyguard" tags="" position="5993.333333333333,1702" size="100,100">&lt;&lt;if $bodyguard === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="12" name="Strengthen bodyguard" tags="" position="5993,1702" size="100,100">&lt;&lt;if $bodyguard === true&gt;&gt;
   &lt;&lt;goto [[Bodyguards was improved]]&gt;&gt;
   
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Bodyguards has improved]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="13" name="Get a helicopter" tags="" position="6492.333333333333,1703" size="100,100">&lt;&lt;if $helicopter === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="13" name="Get a helicopter" tags="" position="6492,1703" size="100,100">&lt;&lt;if $helicopter === true&gt;&gt;
   &lt;&lt;goto [[Helicopter already purchased]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Just bought a helicopter]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="14" name="Top up a Swiss bank account" tags="" position="6996.333333333333,1704" size="100,100">&lt;&lt;if $addToBank === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="14" name="Top up a Swiss bank account" tags="" position="6996,1704" size="100,100">&lt;&lt;if $addToBank === true&gt;&gt;
   &lt;&lt;goto [[Account already replenished]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
@@ -848,58 +779,65 @@ a:hover:after{
 &lt;&lt;/if&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="15" name="Improve finance" tags="" position="8704.333333333334,1305.6666666666667" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;buttonsAll&quot;&gt;
+</tw-passagedata><tw-passagedata pid="15" name="Improve finance" tags="" position="8999,1300" size="100,100">&lt;div class=&quot;buttonsAll&quot;&gt;
 
 &lt;&lt;if $secretPolice === false&gt;&gt;
   [[Попросить займа у русских|Ask for a loan from Russians]]
   [[Попросить помощи у американцев|Ask for help from Amer]]
+  [[Обратиться к олигархам|Businessmans]]
   [[Национализирвоать предприятия соседа|Nationalize enterprises Leftotos]]
   [[Провести обыски у генералов армии|Conduct searches of army generals]]
   [[Провести обыски у полковников Т.П.|Conduct searches of police]]
+  
 &lt;&lt;else&gt;&gt;
   [[Попросить займа у русских|Advice of Ask for a loan from Russians]]
-  [[Попросить помощи у американцев|Advice of Ask for help from Amer]]
+  [[Попросить помощи у американцев|Advice of Ask for help from Amer]]     	[[Обратиться к олигархам|Advice of Ask for Businessmans]]
   [[Национализирвоать предприятия соседа|Advice of Nationalize enterprises Leftotos]]
   [[Провести обыски у генералов армии|Advice of Conduct searches of army generals]]
   [[Провести обыски у полковников Т.П.|Advice of Conduct searches of police]]
 &lt;&lt;/if&gt;&gt;
   [[Назад|Start]]
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="16" name="Strengthen one group" tags="" position="10911.666666666668,1310.6666666666667" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;buttonsAll&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="Strengthen one group" tags="" position="11899,1300" size="100,100">&lt;div class=&quot;buttonsAll&quot;&gt;
 &lt;&lt;if $secretPolice === false&gt;&gt;
-  [[Приобрести тяжелую артиллерию|Acquire heavy artillery]]
+  &lt;&lt;if $hardArtillery === true&gt;&gt;
+	[[Приобрести тяжелую артиллерию|Acquire heavy artillery]]
+
+  &lt;&lt;else&gt;&gt;
+	  [[Приобрести тяжелую артиллерию|Artillery has already]]
+  &lt;&lt;/if&gt;&gt;
   [[Расширить права граждан|Expand the rights of peasants]]
   [[Позволить народу свою полицию|Let the peasants own their police]]
 &lt;&lt;else&gt;&gt;
-  [[Приобрести тяжелую артиллерию|Advice of Acquire heavy artillery]]
+  &lt;&lt;if $hardArtillery === true&gt;&gt;
+	[[Приобрести тяжелую артиллерию|Acquire heavy artillery]]
+
+  &lt;&lt;else&gt;&gt;
+	  [[Приобрести тяжелую артиллерию|Advice of Acquire heavy artillery]]
+  &lt;&lt;/if&gt;&gt;
   [[Расширить права граждан|Advice of Expand the rights of peasants]]
   [[Позволить народу свою полицию|Advice of Let the peasants own their police]]
 &lt;&lt;/if&gt;&gt;
 [[Назад|Start]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="17" name="Acquire heavy artillery" tags="" position="10492.333333333334,1700" size="100,100">&lt;&lt;if $hardArtillery === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="17" name="Acquire heavy artillery" tags="" position="11503,1699" size="100,100">&lt;&lt;if $hardArtillery === true&gt;&gt;
   &lt;&lt;goto [[Artillery has already]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;goto [[Artillery acquired]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="18" name="Expand the rights of peasants" tags="" position="10994.333333333334,1707" size="100,100">&lt;&lt;if $chrestRights === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="18" name="Expand the rights of peasants" tags="" position="11990,1700" size="100,100">&lt;&lt;if $chrestRights === true&gt;&gt;
   &lt;&lt;goto [[Rights of peasants have already expanded]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Rights of peasants not already expanded]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="Let the peasants own their police" tags="" position="11497.333333333334,1702" size="100,100">&lt;&lt;if $christPolice === true&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="Let the peasants own their police" tags="" position="12493,1695" size="100,100">&lt;&lt;if $christPolice === true&gt;&gt;
   &lt;&lt;goto [[Christians have already owned their police]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Christians not already owned their police]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="20" name="Ask for a loan from Russians" tags="" position="7802.333333333333,1700" size="100,100">&lt;&lt;if $virus === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="20" name="Ask for a loan from Russians" tags="" position="7802,1700" size="100,100">&lt;&lt;if $virus === true&gt;&gt;
 &lt;&lt;goto [[Communication error]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
@@ -910,7 +848,7 @@ a:hover:after{
 &lt;&lt;else&gt;&gt;
 &lt;&lt;goto [[Russia helped]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="Ask for help from Amer" tags="" position="8291.333333333334,1699" size="100,100">&lt;&lt;if $virus === true&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="Ask for help from Amer" tags="" position="8291,1699" size="100,100">&lt;&lt;if $virus === true&gt;&gt;
 &lt;&lt;goto [[Communication error]]&gt;&gt;
 &lt;&lt;else&gt;&gt;
 
@@ -920,7 +858,7 @@ a:hover:after{
 &lt;&lt;else&gt;&gt;
 &lt;&lt;goto [[Americans agreed to help]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="Nationalize enterprises Leftotos" tags="" position="8795.333333333334,1699" size="100,100">&lt;&lt;if $leftotoFactory === true || $leftotoMyFriend === false&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="Nationalize enterprises Leftotos" tags="" position="8795,1699" size="100,100">&lt;&lt;if $leftotoFactory === true || $leftotoMyFriend === false&gt;&gt;
 &lt;&lt;goto [[Leftotos enterprises already Nationalize]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
@@ -937,18 +875,16 @@ a:hover:after{
 &lt;&lt;goto [[Greeting]]&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;goto [[Month]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="NewMonth" tags="" position="6198,501" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-  &lt;&lt;if $month !== 1&gt;&gt;
-    &lt;&lt;set $coin -= $expenses, $expenses += 10&gt;&gt;
-  &lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="NewMonth" tags="" position="6198,501" size="100,100">&lt;&lt;if $month !== 1&gt;&gt;
+  &lt;&lt;set $coin -= $expenses, $expenses += 10&gt;&gt;
+&lt;&lt;/if&gt;&gt;
   
-  &lt;div class=&quot;message&quot;&gt;
-	  $message.message
-  &lt;/div&gt;
+&lt;div class=&quot;message&quot;&gt;
+ $message.message
+&lt;/div&gt;
   
-  &lt;div class=&quot;buttons&quot;&gt;
-  
+&lt;div class=&quot;buttons&quot;&gt;
+ 
   &lt;&lt;if $message.button1&gt;&gt;
 	&lt;&lt;if $secretPolice === false&gt;&gt;
 		[[$message.button1|countButton1]]
@@ -959,7 +895,7 @@ a:hover:after{
   
   &lt;&lt;if $message.button2&gt;&gt;
   	&lt;&lt;if $secretPolice === false&gt;&gt;
-		[[$message.button1|countButton2]]
+		[[$message.button2|countButton2]]
 	&lt;&lt;else&gt;&gt;
 		[[$message.button2|Soviet2 of New Month]]
 	&lt;&lt;/if&gt;&gt;
@@ -967,39 +903,37 @@ a:hover:after{
   
   &lt;&lt;if $message.button3&gt;&gt;
 	&lt;&lt;if $secretPolice === false&gt;&gt;
-		[[$message.button1|countButton3]]
+		[[$message.button3|countButton3]]
 	&lt;&lt;else&gt;&gt;
-		[[$message.button2|Soviet3 of New Month]]
+		[[$message.button3|Soviet3 of New Month]]
 	&lt;&lt;/if&gt;&gt;
   &lt;&lt;/if&gt;&gt;
   
   &lt;&lt;if $message.button4&gt;&gt;
 	&lt;&lt;if $secretPolice === false&gt;&gt;
-		[[$message.button1|countButton4]]
+		[[$message.button4|countButton4]]
 	&lt;&lt;else&gt;&gt;
-		[[$message.button2|Soviet4 of New Month]]
+		[[$message.button4|Soviet4 of New Month]]
 	&lt;&lt;/if&gt;&gt;
   &lt;&lt;/if&gt;&gt;
   
   &lt;&lt;if $message.button5&gt;&gt;
   	&lt;&lt;if $secretPolice === false&gt;&gt;
-		[[$message.button1|countButton5]]
+		[[$message.button5|countButton5]]
 	&lt;&lt;else&gt;&gt;
-		[[$message.button2|Soviet5 of New Month]]
+		[[$message.button5|Soviet5 of New Month]]
 	&lt;&lt;/if&gt;&gt;
   &lt;&lt;/if&gt;&gt;
   
   &lt;&lt;if $message.button6&gt;&gt;
 	&lt;&lt;if $secretPolice === false&gt;&gt;
-		[[$message.button1|countButton6]]
+		[[$message.button6|countButton6]]
 	&lt;&lt;else&gt;&gt;
-		[[$message.button2|Soviet6 of New Month]]
+		[[$message.button6|Soviet6 of New Month]]
 	&lt;&lt;/if&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="25" name="Police liquidated" tags="" position="1701.3333333333333,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;&lt;set $expenses -= 8, $secretPolice to false, $popularWithPolice to 0&gt;&gt;
+  &lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="25" name="Police liquidated" tags="" position="1701,1901" size="100,100">&lt;&lt;set $expenses -= 8, $secretPolice to false, $popularWithPolice to 0&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
   Поздравляю!!! Ты только что ликвидировал тайную полицию. Единственные ребята, которые помогали тебе. Дальше будет интереснее, надеюсь ты купил себе вертолет!
@@ -1010,7 +944,7 @@ a:hover:after{
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="26" name="Free hosp seted" tags="" position="2898.3333333333335,1902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="26" name="Free hosp seted" tags="" position="2898,1902" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
   Добро должно делаться конечно, но народу нужные не только бесплатные больницы!
@@ -1020,7 +954,7 @@ a:hover:after{
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="27" name="Weapon of Leftoto gone to America" tags="" position="3701.3333333333335,1902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="27" name="Weapon of Leftoto gone to America" tags="" position="3701,1902" size="100,100">
 
 &lt;&lt;set $coin += 20, $popularWithArmy -= 40, $leftotoMyFriend to true, $popularWithLeftoto += 3, $hardWithLeftoto += 2, $americanArms to true&gt;&gt;
 
@@ -1033,7 +967,7 @@ a:hover:after{
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="28" name="Mines was Sold to US firms" tags="" position="4204.333333333333,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="28" name="Mines was Sold to US firms" tags="" position="4204,1901" size="100,100">
 
 &lt;&lt;if $popularWithAmericans &lt; 90&gt;&gt;
 	&lt;&lt;set $popularWithAmericans += 10&gt;&gt;
@@ -1049,9 +983,7 @@ a:hover:after{
 [[Улучшить положение еще|Start]]
 [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="29" name="Naval base given to Russians" tags="" position="4698.333333333333,1904" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;&lt;if $popularWithRussians &lt; 90&gt;&gt;
+</tw-passagedata><tw-passagedata pid="29" name="Naval base given to Russians" tags="" position="4698,1904" size="100,100">&lt;&lt;if $popularWithRussians &lt; 90&gt;&gt;
 	&lt;&lt;set $popularWithRussians += 10&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $coin += 100, $expenses += 10, $popularWithChristians -= 40, $partisans -= 5, $popularWithArmy -= 40, $seaToRussian to true&gt;&gt;
@@ -1064,9 +996,10 @@ a:hover:after{
 &lt;div class=&quot;buttons&quot;&gt;
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="Money is over" tags="" position="3906.0000000000005,103.66666666666666" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="Money is over" tags="" position="3906,103" size="100,100">
 
 &lt;&lt;set 
+	$prevMonth to $month,
 	$prevCoin to $coin, 
 	$prevPopularWithArmy to  $popularWithArmy,
 	$prevPopularWithChristians to  $popularWithChristians,
@@ -1103,9 +1036,10 @@ a:hover:after{
 
 &lt;div class=&quot;buttons&quot;&gt;
 [[Закончить игру|State]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="You not popular of christians" tags="" position="4389.666666666666,301" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="You not popular of christians" tags="" position="4404,301" size="100,100">
 
 &lt;&lt;set 
+	$prevMonth to $month,
 	$prevCoin to $coin, 
 	$prevPopularWithArmy to $popularWithArmy,
 	$prevPopularWithChristians to $popularWithChristians,
@@ -1118,11 +1052,11 @@ a:hover:after{
 	$prevPopularWithLeftoto to $popularWithLeftoto
 &gt;&gt;
 
-&lt;div class=&quot;message&quot;&gt;
-	Граждане не довольны тем, что ты плохо управляешь страной, они вышли протестовать! Стоит угомонить их!
-	
+&lt;div class=&quot;message&quot;&gt;	
 &lt;&lt;if $popularWithArmy &lt;= 20 &amp;&amp; $popularWithPolice &lt;= 20 &amp;&amp; $popularWithRussians &lt;= 50 &amp;&amp; $popularWithAmericans &lt;= 50 &amp;&amp; !$helicopter&gt;&gt;
 	Твое правление подошло к концу. Ты не смог справиться с протестами граждан и тебя сняли с поста главы, а так же выписали штраф за твои деяния.
+&lt;&lt;else&gt;&gt;
+	Граждане не довольны тем, что ты плохо управляешь страной, они вышли протестовать! Стоит угомонить их!
 &lt;&lt;/if&gt;&gt;
 
 	&lt;img class=&quot;miting&quot; src=&quot;https://loapits.github.io/political-game/img/miting-of-christians.png&quot;&gt;
@@ -1151,12 +1085,12 @@ a:hover:after{
 &lt;&lt;/if&gt;&gt;
 
 [[Закончить игру|Previous Game]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Police have improved" tags="" position="5601.333333333333,1902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Police have improved" tags="" position="5599,1897" size="100,100">
 
 &lt;&lt;set $expenses += 6, $popularWithChristians -= 40, $partisans -= 5, $hardWithPolice += 7, $improveSecretPolice to true&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
-  Ты резко усилил тайную полицию
+  Тайная полиция резко усилена
   &lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;/div&gt;	
 
@@ -1164,7 +1098,7 @@ a:hover:after{
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="33" name="Bodyguards has improved" tags="" position="6092.333333333333,1905" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="33" name="Bodyguards has improved" tags="" position="6092,1905" size="100,100">
 
 &lt;&lt;if  $coin &lt;= 0&gt;&gt;
 &lt;&lt;goto [[No money]]&gt;&gt;
@@ -1182,7 +1116,7 @@ a:hover:after{
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="34" name="Just bought a helicopter" tags="" position="6394.333333333333,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="34" name="Just bought a helicopter" tags="" position="6394,1903" size="100,100">
 
 &lt;&lt;if  $coin &lt;= 0&gt;&gt;
 &lt;&lt;goto [[No money]]&gt;&gt;
@@ -1200,7 +1134,7 @@ a:hover:after{
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="35" name="Replenished an account in a Swiss bank" tags="" position="6898.333333333333,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="35" name="Replenished an account in a Swiss bank" tags="" position="6898,1903" size="100,100">
 
 &lt;&lt;if  $coin &lt;= 0&gt;&gt;
 &lt;&lt;goto [[No money]]&gt;&gt;
@@ -1209,7 +1143,7 @@ a:hover:after{
 &lt;&lt;set $coin -= 1000, $bank += 1000, $addToBank to true&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
-  Ты пополнили швейцарский банк
+  Ты пополнил счет в  швейцарском банке
   &lt;&lt;display [[Resourses]]&gt;&gt;
   Счет в Швецарском банке: $bank.
 &lt;/div&gt;
@@ -1220,7 +1154,7 @@ a:hover:after{
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="36" name="Leftotos enterprises have Nationalize" tags="" position="8701.333333333334,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="36" name="Leftotos enterprises have Nationalize" tags="" position="8701,1901" size="100,100">
 
 &lt;&lt;if $popularWithChristians &lt; 90&gt;&gt;
 	&lt;&lt;set $popularWithChristians += 10&gt;&gt;
@@ -1236,7 +1170,7 @@ a:hover:after{
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="37" name="Russia helped" tags="" position="7603.333333333333,1898" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="37" name="Russia helped" tags="" position="7603,1898" size="100,100">
 
 &lt;&lt;set $coin += 100, $popularWithRussians -= 5&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
@@ -1247,7 +1181,7 @@ a:hover:after{
 &lt;div class=&quot;buttons&quot;&gt;
 [[Улучшить положение еще|Start]]
 [[Закончить этот месяц|Switch month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Americans agreed to help" tags="" position="8405.333333333334,1906" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Americans agreed to help" tags="" position="8405,1906" size="100,100">
 
 &lt;&lt;set $coin += 100, $popularWithAmericans -= 5&gt;&gt;
 
@@ -1259,7 +1193,7 @@ a:hover:after{
 &lt;div class=&quot;buttons&quot;&gt;
 [[Улучшить положение еще|Start]]
 [[Закончить этот месяц|Switch month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="Artillery acquired" tags="" position="10397.333333333334,1907" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="Artillery acquired" tags="" position="11393,1900" size="100,100">
 
 &lt;&lt;if  $coin &lt;= 0&gt;&gt;
 &lt;&lt;goto [[No money]]&gt;&gt;
@@ -1276,10 +1210,8 @@ a:hover:after{
 [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Switch month" tags="" position="6200.333333333333,2301.666666666667" size="100,100">&lt;&lt;set $month += 1, $addToBank to false&gt;&gt;
-&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Month" tags="" position="6200,305" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;&lt;set $message to either($arr)&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Switch month" tags="" position="6200,2301" size="100,100">&lt;&lt;set $month += 1, $addToBank to false&gt;&gt;
+&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Month" tags="" position="6200,305" size="100,100">&lt;&lt;set $message to either($arr)&gt;&gt;
 
 &lt;&lt;if $coin &lt;= 0 &gt;&gt;
 &lt;&lt;goto [[Money is over]]&gt;&gt;
@@ -1300,12 +1232,13 @@ a:hover:after{
 &lt;&lt;/if&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="42" name="Previous Game" tags="" position="6395.333333333333,102" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="42" name="Previous Game" tags="" position="6395,102" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 
   &lt;div class=&quot;title&quot;&gt;
-	Ты проиграл :( Твои успехи:
+	Ты проиграл, продержавшись на посту главы $prevMonth мес.
+	Твои успехи:
   &lt;/div&gt;	
 
   &lt;div&gt;
@@ -1351,7 +1284,7 @@ a:hover:after{
 
 &lt;div class=&quot;buttons&quot;&gt;
 [[Попробовать снова|State]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="Greeting" tags="" position="6410.333333333333,300" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="Greeting" tags="" position="6410,300" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
   $greeting
@@ -1359,7 +1292,7 @@ a:hover:after{
 
 &lt;div class=&quot;buttons&quot;&gt;
 [[Вперед к победе!|Month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="Communication error" tags="" position="8099.333333333333,1890" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="Communication error" tags="" position="8099,1890" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Извини, но границы закрыты, в данный момент все коммуникации сведены к нулю из-за новостей о вирусе. Думаю что в следующем месяце обстановка наладится
@@ -1369,7 +1302,7 @@ a:hover:after{
 [[Ок|Start]]
 [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="45" name="Helicopter already purchased" tags="" position="6591.333333333333,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="45" name="Helicopter already purchased" tags="" position="6591,1901" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
   У тебя уже есть вертолет для побега, если что-то пойдет не так. Конечно ты бы мог купить и еще один, но лучше уже потратить деньги на государство. А то еще люди узнают.
@@ -1379,7 +1312,7 @@ a:hover:after{
   [[Да наверное правда|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="46" name="New month" tags="" position="6404.333333333333,499" size="100,100">&lt;&lt;set 
+</tw-passagedata><tw-passagedata pid="46" name="New month" tags="" position="6400.666666666667,499" size="100,100">&lt;&lt;set 
   $month += 1,
   $virus to false,
   $improveSecretPolice to false,
@@ -1394,9 +1327,10 @@ a:hover:after{
   $christPolice to false, 
   $taxes to false,
   $popularCompany to false,
-  $freeHosp to false
+  $freeHosp to false,
+  $businessmans to false
 &gt;&gt;
-&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="47" name="Resourses" tags="" position="6199.666666666666,2499" size="100,100">&lt;&lt;if $secretPolice === false&gt;&gt;
+&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="47" name="Resourses" tags="" position="6199,2499" size="100,100">&lt;&lt;if $secretPolice === false&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;title&quot;&gt;
 	Текущие ресурсы:
@@ -1578,24 +1512,14 @@ $message8 to {
   countBtn3: &#96;&lt;&lt;set $popularWithArmy -= 10, $vicePresident to false&gt;&gt;&#96;,
   effect1: &#96;Отстранен за утрату доверия. Дошутился.&#96;,
   effect2: &#96;Нечего было шутить.&#96;,
-  effect3: &#96;Нечего было шутить.&#96;,
   adv1: $advice8one,
   adv2: $advice8_2,
   adv3: $advice8_3,
   goNext: &quot;Ок&quot;
-},
-$message9 to {
-  message: &quot;На проезжей части рядом с алеей ведётся плановый ремонт тепловых камер. Поэтому остановку было решено перенести. Вот что думают горожане: Когда уже откроют улицу? Невозможно ездить. Автобусы останавливаются на проезжей части, пассажиров там всегда много, приходится подолгу ждать. И во что превратится эта бедная аллея? Ее ведь просто вытопчут…&quot;,
-  button1: &quot;Скоро все будет&quot;,
-  button2: &quot;Оставим так, живите с этим&quot;,
-  countBtn1: &#96;&lt;&lt;set $vicePresident to false, $popularWithArmy to 0&gt;&gt;&#96;,
-  countBtn2: &#96;&lt;&lt;set $secretPolice to false, $popularWithPolice to 0&gt;&gt;&#96;,
-  adv1: $advice9one,
-  adv2: $advice9_2,
-  goNext: &quot;Ок&quot;
 }
 &gt;&gt;
-&lt;&lt;set $arr to [$message1, $message2, $message3, $message4, $message5, $message6, $message7, $message8, $message9]&gt;&gt;
+
+&lt;&lt;set $arr to [$message1, $message2, $message3, $message4, $message5, $message6, $message7, $message8]&gt;&gt;
 &lt;&lt;set $message to either($arr)&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="ResoursesState" tags="" position="5802,2" size="100,100">&lt;&lt;set
   //Resourses
   $coin to 4000,
@@ -1610,6 +1534,8 @@ $message9 to {
   $popularWithRussians to  0,
   $popularWithAmericans to  0,
   $popularWithLeftoto to 11,
+  
+  $popularWithBusinessmans to 12,
 
   $hardWithRussians to  5,
   $hardWithAmericans to 5,
@@ -1618,12 +1544,12 @@ $message9 to {
   $helicopter to false,
   $expenses to 50,
   $bank to 0,
-  $businessmans to true,
   $month to 1,
 
   $partisans to 15,
   $partisansHards to 12,
 
+  $businessmans to false,
   $virus to false,
   $secretPolice to true, 
   $improveSecretPolice to false,
@@ -1644,7 +1570,7 @@ $message9 to {
   $freeHosp to false,
   $conductArm to false,
   $conductPolice to false
-&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="Account already replenished" tags="" position="7098.333333333333,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="Account already replenished" tags="" position="7098,1903" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
   Не думаю что все деньги из гос.бюджета стоит класть к себе на счет. Имей совесть, оставь и народу хотя бы что-то!
@@ -1654,17 +1580,17 @@ $message9 to {
   [[Надо помочь людям!|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="51" name="Do not let the military" tags="" position="2397.3333333333335,1899" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="51" name="Do not let the military" tags="" position="2397,1899" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
-  На посту вице-президента и так уже военный. Я не думаю что между ними двумя будет особая разница.
+  На посту вице-президента и так уже военный. Между ними двумя не будет разницы.
 &lt;/div&gt;	
 
 &lt;div class=&quot;buttons&quot;&gt;
   [[Сделаю что-нибудь другое тогда|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="52" name="Landowner dont manager" tags="" position="3199.3333333333335,1902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="52" name="Landowner dont manager" tags="" position="3199,1902" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
   Слишком много власти не есть хорошо. Лучше не пускать все на самотек, а то могут революцию поднять.
@@ -1672,13 +1598,13 @@ $message9 to {
 &lt;&lt;if $addToBank === true&gt;&gt;
   И не забывай про то, чьи деньги ты положил себе на счет. Еще узнают все. Не стоит рисковать!
 &lt;&lt;/if&gt;&gt;
+&lt;/div&gt;	
 
 &lt;div class=&quot;buttons&quot;&gt;
   [[И то верно|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-&lt;/div&gt;	
-</tw-passagedata><tw-passagedata pid="53" name="Leftotos enterprises already Nationalize" tags="" position="8896.333333333334,1900" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="53" name="Leftotos enterprises already Nationalize" tags="" position="8896,1900" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	&lt;&lt;if $leftotoFactory === true&gt;&gt;
@@ -1692,7 +1618,7 @@ $message9 to {
   [[Окей, попробую другое|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="54" name="Weapons already sold to America" tags="" position="3895.3333333333335,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="54" name="Weapons already sold to America" tags="" position="3895,1901" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
   Ты уже продал соседнему государству оружие Америки. Больше продавать нечего. Но ты можешь продать оставшуюся страну, уверен жители обрадуются!
@@ -1702,7 +1628,7 @@ $message9 to {
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="55" name="Мine to firms" tags="" position="4397.333333333333,1902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="55" name="Мine to firms" tags="" position="4397,1902" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
   Ну ты обнаглевший... И так все разворовали, чего еще тебе нужно?
@@ -1712,7 +1638,7 @@ $message9 to {
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="56" name="Russian has a naval base" tags="" position="4901.333333333333,1906" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="56" name="Russian has a naval base" tags="" position="4901,1906" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
   Ты уже продал России военно-морскую базу.
@@ -1722,7 +1648,7 @@ $message9 to {
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="57" name="Artillery has already" tags="" position="10596.333333333334,1906" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="57" name="Artillery has already" tags="" position="11592,1899" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Артиллерия уже приобретена, нам уже девать ее некуда. Сделай что-нибудь другое!
@@ -1732,7 +1658,7 @@ $message9 to {
 [[Окей, попробовать другое|Start]]
 [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="58" name="Rights of peasants have already expanded" tags="" position="10897.333333333334,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="58" name="Rights of peasants have already expanded" tags="" position="11893,1896" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Не думаю что народу нужно столько прав. Им хватит и того, что уже есть! Не надо давать им больше чем они заслуживают! Это опасно!
@@ -1742,7 +1668,7 @@ $message9 to {
 [[Окей, попробовать другое|Start]]
 [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="59" name="Christians have already owned their police" tags="" position="11391.333333333334,1902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="59" name="Christians have already owned their police" tags="" position="12387,1895" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	У народа уже есть своя полиция. Если сделать это снова, то полиции будет больше чем самих граждан.
@@ -1752,7 +1678,7 @@ $message9 to {
 [[Окей, попробовать другое|Start]]
 [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="60" name="Improve secret police true" tags="" position="5393.333333333333,1904" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="60" name="Improve secret police true" tags="" position="5403,1904" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
   Тайная полиция уже усилена и на страже закона, думаю они справятся со своей задачей на все сто.
@@ -1761,7 +1687,7 @@ $message9 to {
 &lt;div class=&quot;buttons&quot;&gt;
   [[Да наверное правда|Start]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="61" name="Russians please help" tags="" position="3704.0000000000005,305.66666666666663" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="61" name="Russians please help" tags="" position="3704,305" size="100,100">
 
 &lt;&lt;if $popularWithRussians &gt; 50&gt;&gt;
 
@@ -1778,7 +1704,7 @@ $message9 to {
 [[Закончить игру|Previous Game]]
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="62" name="America please help" tags="" position="3901.0000000000005,303.66666666666663" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="62" name="America please help" tags="" position="3901,303" size="100,100">
 
 &lt;&lt;if $popularWithAmericans &gt; 50&gt;&gt;
 
@@ -1796,15 +1722,15 @@ $message9 to {
 [[Закончить игру|Previous Game]]
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="63" name="Empty the bank" tags="" position="4101,305.66666666666663" size="100,100">&lt;&lt;set $coin += $bank, $bank to 0 &gt;&gt;
-&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="64" name="No money" tags="" position="6197,2103.3333333333335" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="63" name="Empty the bank" tags="" position="4101,305" size="100,100">&lt;&lt;set $coin += $bank, $bank to 0 &gt;&gt;
+&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="64" name="No money" tags="" position="6197,2103" size="100,100">
 &lt;div class=&quot;message&quot;&gt;
   Извини, но у тебя не хватает денег! Попробуй сначала увеличить количество денег в казне
 &lt;/div&gt;
 &lt;div class=&quot;buttons&quot;&gt;
 [[Улучшить положение|Start]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="65" name="Not popular with neighbors" tags="" position="7896.333333333333,1899" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="65" name="Not popular with neighbors" tags="" position="7896,1899" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Тебе не будут помогать, т.к. у тебя нет достаточного авторитета среди них! Сначала лушче повысить популярность у них!
@@ -1814,7 +1740,7 @@ $message9 to {
 [[Ок|Start]]
 [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="66" name="Bodyguards was improved" tags="" position="5900.333333333333,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="66" name="Bodyguards was improved" tags="" position="5900,1903" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
   Личная охрана уже усилена и следит за твоей сохранностью!
@@ -1825,7 +1751,7 @@ $message9 to {
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="67" name="Army against protests" tags="" position="4796.333333333333,498.3333333333333" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="67" name="Army against protests" tags="" position="4796,498" size="100,100">
 
 &lt;&lt;if $hardWithArmy &gt; $partisansHards&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
@@ -1848,9 +1774,7 @@ $message9 to {
 
 [[Закончить игру|Previous Game]]
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="68" name="Christians against protests" tags="" position="4799.333333333333,696.3333333333334" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;&lt;if $hardWithArmy &gt; $partisansHards&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="68" name="Christians against protests" tags="" position="4799,696" size="100,100">&lt;&lt;if $hardWithArmy &gt; $partisansHards&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
 	Твой народ готов пойти в бой ради тебя. Думаю что ты правильно управлял страной, раз они готовы ради тебя подавить революцию!
@@ -1872,9 +1796,7 @@ $message9 to {
 
 [[Закончить игру|Previous Game]]
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="Police against protests" tags="" position="4594.666666666666,912" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;&lt;if $hardWithPolice &gt; $partisansHards&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="Police against protests" tags="" position="4594,912" size="100,100">&lt;&lt;if $hardWithPolice &gt; $partisansHards&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Тайная полиция смогла найти способ подавления революции! Не зря они свой хлеб едят!
 &lt;/div&gt;
@@ -1895,9 +1817,7 @@ $message9 to {
 
 [[Закончить игру|Previous Game]]
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="America against protests" tags="" position="4592.333333333333,701.3333333333334" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;&lt;if $hardWithAmericans &gt; $partisansHards&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="America against protests" tags="" position="4592,701" size="100,100">&lt;&lt;if $hardWithAmericans &gt; $partisansHards&gt;&gt;
 
 &lt;div class=&quot;message&quot;&gt;
 	Америка помогла тебе в подавлении революции. Думаю с такими соседями ты не пропадешь
@@ -1919,10 +1839,8 @@ $message9 to {
 
 [[Закончить игру|Previous Game]]
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="Get helicopter" tags="" position="4604,496.3333333333333" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
-	Поздравляю, ты смог смотаться из этой страны. Надеюсь ее жители не очень расстроятся и не решать гнаться за тобой. Теперь главное не возвращаться сюда, хуже будет...
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="Get helicopter" tags="" position="4604,496" size="100,100">&lt;div class=&quot;message&quot;&gt;
+	Поздравляю, ты смог смотаться из этой страны. Надеюсь ее жители не очень расстроятся и не буду гнаться за тобой. Теперь главное не возвращаться сюда, хуже будет...
 	&lt;img class=&quot;helicopter&quot; src=&quot;https://cs9.pikabu.ru/post_img/big/2020/01/20/5/1579503084188783428.png&quot;&gt;
 &lt;/div&gt;
 
@@ -1930,7 +1848,7 @@ $message9 to {
 [[Начать игру заново|Previous Game]]
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="72" name="Russians against protests" tags="" position="5001.333333333333,696.3333333333334" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="72" name="Russians against protests" tags="" position="5001,696" size="100,100">
 
 &lt;&lt;if $hardWithRussians &gt; $partisansHards&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
@@ -1953,9 +1871,10 @@ $message9 to {
 
 [[Закончить игру|Previous Game]]
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="Revolution" tags="" position="4699.666666666666,299.6666666666667" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="Revolution" tags="" position="4702.333333333334,302.3333333333333" size="100,100">
 
 &lt;&lt;set 
+	$prevMonth to $month,
 	$prevCoin to $coin, 
 	$prevPopularWithArmy to $popularWithArmy,
 	$prevPopularWithChristians to $popularWithChristians,
@@ -2007,8 +1926,12 @@ $message9 to {
   &lt;&lt;/if&gt;&gt;
   
   [[Закончить игру|Previous Game]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="Goodbye bank" tags="" position="4387.666666666666,501" size="100,100">&lt;&lt;set $coin += $bank, $bank to 0 &gt;&gt;
-&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="Army against crists" tags="" position="4199.999999999999,710" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="Goodbye bank" tags="" position="4402,501" size="100,100">&lt;&lt;set 
+	$coin += $bank, 
+	$bank to 0,  
+	$popularWithChristians to  50
+&gt;&gt;
+&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="Army against crists" tags="" position="4199,710" size="100,100">
 
 &lt;&lt;if $hardWithArmy &gt; $hardWithChristians&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
@@ -2037,7 +1960,7 @@ $message9 to {
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="76" name="Police against crists" tags="" position="4399.666666666666,699.3333333333334" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="76" name="Police against crists" tags="" position="4399,699" size="100,100">
 
 &lt;&lt;if $hardWithPolice &gt; $hardWithChristians&gt;&gt;
 
@@ -2112,7 +2035,7 @@ $message.effect2
 &lt;&lt;else&gt;&gt;
   $message.countBtn2
   &lt;&lt;goto [[Start]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="79" name="countButton3" tags="" position="6102.333333333333,896.6666666666666" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="79" name="countButton3" tags="" position="6102,896" size="100,100">&lt;&lt;if $month == 1&gt;&gt;
   &lt;&lt;set $virus to true&gt;&gt;
   
 &lt;&lt;else&gt;&gt;
@@ -2196,7 +2119,7 @@ $message.countBtn6
 &lt;&lt;else&gt;&gt;
   $message.countBtn6
   &lt;&lt;goto [[Start]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="Conduct searches of army generals" tags="" position="9290.333333333334,1696" size="100,100">&lt;&lt;if $conductArm === false&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="Conduct searches of army generals" tags="" position="9290,1696" size="100,100">&lt;&lt;if $conductArm === false&gt;&gt;
   &lt;&lt;goto [[Conduct will be searched of army generals]]&gt;&gt;
 &lt;&lt;else&gt;&gt;
 
@@ -2204,7 +2127,7 @@ $message.countBtn6
 &lt;&lt;/if&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="84" name="Conduct searches of police" tags="" position="9796.333333333334,1701" size="100,100">&lt;&lt;if $conductArm === false&gt;&gt;
+</tw-passagedata><tw-passagedata pid="84" name="Conduct searches of police" tags="" position="9796,1701" size="100,100">&lt;&lt;if $conductArm === false&gt;&gt;
   &lt;&lt;goto [[ConductPoli will be searched of police generals]]&gt;&gt;
 &lt;&lt;else&gt;&gt;
 
@@ -2212,7 +2135,7 @@ $message.countBtn6
 &lt;&lt;/if&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="85" name="Christians have self-manager" tags="" position="3399.3333333333335,1902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="85" name="Christians have self-manager" tags="" position="3399,1902" size="100,100">
 
 &lt;&lt;if $popularWithChristians &lt; 90&gt;&gt;
 	&lt;&lt;set $popularWithChristians += 5&gt;&gt;
@@ -2227,7 +2150,7 @@ $message.countBtn6
 &lt;div class=&quot;buttons&quot;&gt;
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="Free hosp will open" tags="" position="2702.3333333333335,1904" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="Free hosp will open" tags="" position="2702,1904" size="100,100">
 
   &lt;&lt;if $popularWithChristians &lt; 90&gt;&gt;
 	  &lt;&lt;set $popularWithChristians += 5&gt;&gt;
@@ -2247,9 +2170,7 @@ $message.countBtn6
   &lt;div class=&quot;buttons&quot;&gt;
 	[[Улучшить положение еще|Start]]
 	[[Закончить этот месяц|Switch month]]
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="Vice President will be Military" tags="" position="2195.3333333333335,1898" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;&lt;if $popularWithArmy &lt; 90&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="Vice President will be Military" tags="" position="2195,1898" size="100,100">&lt;&lt;if $popularWithArmy &lt; 90&gt;&gt;
   &lt;&lt;set $popularWithArmy += 10&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $vicePresident to true&gt;&gt;
@@ -2262,17 +2183,14 @@ $message.countBtn6
 &lt;div class=&quot;buttons&quot;&gt;
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="Taxes is not empty" tags="" position="497.3333333333333,1899" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="Taxes is not empty" tags="" position="497,1899" size="100,100">&lt;div class=&quot;message&quot;&gt;
   В этом месяце больше нельзя уменьшить налоги.
 &lt;/div&gt;	
 
 &lt;div class=&quot;buttons&quot;&gt;
   [[Ок, тогда что-то другое|Start]]
   [[Закончить этот месяц|Switch month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="Taxes is empty" tags="" position="692.3333333333334,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="Taxes is empty" tags="" position="692,1901" size="100,100">
 &lt;&lt;if $popularWithChristians &lt; 95&gt;&gt;
 	&lt;&lt;set $popularWithChristians += 5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -2286,17 +2204,17 @@ $message.countBtn6
 &lt;div class=&quot;buttons&quot;&gt;
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="Was popularization" tags="" position="991.3333333333334,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="Was popularization" tags="" position="991,1903" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
-  Компания популяризации уже проведена! Не думаю что стоит так часто это делать!
+  Компания популяризации уже проведена! Не стоит наверное так часто это делать!
 &lt;/div&gt;	
 
 &lt;div class=&quot;buttons&quot;&gt;
   [[Ок, тогда что-то другое|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="91" name="Will be popularization" tags="" position="1200.3333333333333,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="91" name="Will be popularization" tags="" position="1200,1901" size="100,100">
 
 &lt;&lt;if $popularWithChristians &lt; 90&gt;&gt;
 	&lt;&lt;set $popularWithChristians += 10&gt;&gt;
@@ -2312,9 +2230,7 @@ $message.countBtn6
 &lt;div class=&quot;buttons&quot;&gt;
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="Police was liquidated" tags="" position="1497.3333333333333,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="Police was liquidated" tags="" position="1497,1901" size="100,100">&lt;div class=&quot;message&quot;&gt;
   Тайная полиция уже ликвидирована!
 &lt;/div&gt;	
 
@@ -2322,7 +2238,7 @@ $message.countBtn6
   [[Улучшить положение еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="93" name="Conduct will be searched of army generals" tags="" position="9198.333333333334,1897" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="93" name="Conduct will be searched of army generals" tags="" position="9198,1897" size="100,100">
 
 &lt;&lt;set $vicePresident to false, $conductArm to true, $popularWithArmy to 0&gt;&gt;
 
@@ -2333,7 +2249,7 @@ $message.countBtn6
 &lt;div class=&quot;buttons&quot;&gt;
   [[Улучшить еще|Start]]
   [[Закончить этот месяц|Switch month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="Conduct was searched of army generals" tags="" position="9396.333333333334,1895" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="Conduct was searched of army generals" tags="" position="9396,1895" size="100,100">
 
 &lt;&lt;set $vicePresident to false, $conductArm to true, $popularWithArmy to 0&gt;&gt;
 
@@ -2344,7 +2260,7 @@ $message.countBtn6
 &lt;div class=&quot;buttons&quot;&gt;
   [[Улучшить еще|Start]]
   [[Закончить этот месяц|Switch month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="ConductPoli will be searched of police generals" tags="" position="9698.333333333334,1902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="ConductPoli will be searched of police generals" tags="" position="9698,1902" size="100,100">
 &lt;&lt;set $secretPolice to false, $conductPolice to true, $popularWithPolice to 0&gt;&gt;
 	
 &lt;div class=&quot;message&quot;&gt;
@@ -2355,7 +2271,7 @@ $message.countBtn6
 [[Улучшить еще|Start]]
 [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="96" name="Conduct was searched of police generals" tags="" position="9894.333333333334,1898" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="96" name="Conduct was searched of police generals" tags="" position="9894,1898" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
   Обыски уже проведены, больше некого обыскивать.
@@ -2365,7 +2281,7 @@ $message.countBtn6
   [[Улучшить еще|Start]]
   [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="97" name="Rights of peasants not already expanded" tags="" position="11088.333333333334,1901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="97" name="Rights of peasants not already expanded" tags="" position="12084,1894" size="100,100">
 
 &lt;&lt;if $popularWithChristians &lt; 90&gt;&gt;
   &lt;&lt;set $popularWithChristians += 5&gt;&gt;
@@ -2382,7 +2298,7 @@ $message.countBtn6
 [[Ок|Start]]
 [[Закончить этот месяц|Switch month]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="98" name="Christians not already owned their police" tags="" position="11592.333333333334,1903" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="98" name="Christians not already owned their police" tags="" position="12588,1896" size="100,100">
 
 &lt;&lt;if $popularWithChristians &lt; 90&gt;&gt;
   &lt;&lt;set $popularWithChristians += 5&gt;&gt;
@@ -2399,32 +2315,30 @@ $message.countBtn6
 &lt;div class=&quot;buttons&quot;&gt;
   [[Ок|Start]]
   [[Закончить этот месяц|Switch month]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="Reduce taxes" tags="" position="603.3333333333334,1704" size="100,100">&lt;&lt;if $taxes === true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="Reduce taxes" tags="" position="603,1704" size="100,100">&lt;&lt;if $taxes === true&gt;&gt;
   &lt;&lt;goto [[Taxes is not empty]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Taxes is empty]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="100" name="To popularize" tags="" position="1103.3333333333333,1699" size="100,100">&lt;&lt;if $popularCompany === true&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="100" name="To popularize" tags="" position="1101.3333333333333,1699" size="100,100">&lt;&lt;if $popularCompany === true&gt;&gt;
   &lt;&lt;goto [[Was popularization]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Will be popularization]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="101" name="Eliminate Secret Police" tags="" position="1599.3333333333333,1704" size="100,100">&lt;&lt;if $secretPolice === true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="101" name="Eliminate Secret Police" tags="" position="1599,1704" size="100,100">&lt;&lt;if $secretPolice === true&gt;&gt;
   &lt;&lt;goto [[Police liquidated]]&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Police was liquidated]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="102" name="Advice of reduce taxes" tags="" position="498.3333333333333,1504" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="102" name="Advice of reduce taxes" tags="" position="498,1504" size="100,100">&lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
 &lt;/div&gt;
 
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of reduce taxes]]
 [[Нет|Reduce taxes]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="Geted advice of reduce taxes" tags="" position="407.66666666666663,1705.6666666666667" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="Geted advice of reduce taxes" tags="" position="407,1705" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -2466,26 +2380,25 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
-  Месячные расходы: $expenses.
+  Месячные расходы: $expenses + 20.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;buttons&quot;&gt;
   [[Ок|Reduce taxes]]  
   [[Отмена|Please all groups]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="104" name="Advice of popularize" tags="" position="1001,1502" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="104" name="Advice of popularize" tags="" position="1001,1502" size="100,100">&lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
 &lt;/div&gt;
 
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of popularize]]
 [[Нет|To popularize]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="Geted advice of popularize" tags="" position="881.3333333333334,1704" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="Geted advice of popularize" tags="" position="881,1704" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -2527,6 +2440,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -2537,16 +2451,14 @@ $message.countBtn6
   [[Ок|To popularize]]
   [[Отмена|Please all groups]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="106" name="Advice of eliminate Secret Police" tags="" position="1506.3333333333333,1499" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="106" name="Advice of eliminate Secret Police" tags="" position="1506,1499" size="100,100">&lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
 &lt;/div&gt;
 
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of eliminate Secret Police]]
 [[Нет|Eliminate Secret Police]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="Geted advice of eliminate Secret Police" tags="" position="1396.3333333333333,1707" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="Geted advice of eliminate Secret Police" tags="" position="1396,1707" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -2584,6 +2496,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -2594,9 +2507,7 @@ $message.countBtn6
   [[Ок|Eliminate Secret Police]]
   [[Отмена|Please all groups]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="108" name="Geted advice of Make Vice President Military" tags="" position="2098.3333333333335,1707" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="108" name="Geted advice of Make Vice President Military" tags="" position="2098,1707" size="100,100">&lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
 	Помощь советника!
 &lt;/div&gt;	
@@ -2636,6 +2547,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -2646,7 +2558,7 @@ $message.countBtn6
   [[Ок|Make Vice President Military]]  
   [[Отмена|Suit one group]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="109" name="Geted advice of Open free hospitals" tags="" position="2598.666666666667,1701.6666666666667" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="109" name="Geted advice of Open free hospitals" tags="" position="2598,1701" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -2661,8 +2573,8 @@ $message.countBtn6
 &lt;/div&gt;
 &lt;div&gt;
 	Силовики: $popularWithArmy.
-	&lt;if $popularWithChristians &lt; 90&gt;&gt;
-		Граждане:$popularWithChristians + 5.
+	&lt;&lt;if $popularWithChristians &lt; 90&gt;&gt;
+		Граждане: $popularWithChristians + 5.
 	&lt;&lt;else&gt;&gt;
 		Граждане:$popularWithChristians.
 	&lt;&lt;/if&gt;&gt;
@@ -2688,6 +2600,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -2698,7 +2611,7 @@ $message.countBtn6
   [[Ок|Open free hospitals]]  
   [[Отмена|Suit one group]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="110" name="Geted advice of Give christians self-government" tags="" position="3099.3333333333335,1703" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="110" name="Geted advice of Give christians self-government" tags="" position="3099,1703" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -2740,6 +2653,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -2750,7 +2664,7 @@ $message.countBtn6
   [[Ок|Give christians self-government]]  
   [[Отмена|Suit one group]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="111" name="Geted advice of Sell Leftoto Amer weapon" tags="" position="3597.3333333333335,1703" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="111" name="Geted advice of Sell Leftoto Amer weapon" tags="" position="3597,1703" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -2799,7 +2713,7 @@ $message.countBtn6
   [[Ок|Sell Leftoto Amer weapon]]
   [[Отмена|Suit one group]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="112" name="Geted advice of Sell mines to US firms" tags="" position="4110.333333333333,1709" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="112" name="Geted advice of Sell mines to US firms" tags="" position="4110,1709" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -2837,6 +2751,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans + 10.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -2847,7 +2762,7 @@ $message.countBtn6
   [[Ок|Sell mines to US firms]]  
   [[Отмена|Suit one group]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="113" name="Geted advice of Give Russians a naval base" tags="" position="4602.333333333333,1703" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="113" name="Geted advice of Give Russians a naval base" tags="" position="4602,1703" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -2890,6 +2805,7 @@ $message.countBtn6
 	&lt;&lt;/if&gt;&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -2900,16 +2816,14 @@ $message.countBtn6
   [[Ок|Give Russians a naval base]]  
   [[Отмена|Suit one group]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="114" name="Advice of Make Vice President Military" tags="" position="2200.666666666667,1503" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="114" name="Advice of Make Vice President Military" tags="" position="2200,1503" size="100,100">&lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
 &lt;/div&gt;
 
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Make Vice President Military]]
 [[Нет|Make Vice President Military]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="115" name="Advice of Open free hospitals" tags="" position="2705.3333333333335,1500" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="115" name="Advice of Open free hospitals" tags="" position="2705,1500" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -2918,7 +2832,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Open free hospitals]]
 [[Нет|Open free hospitals]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="Advice of Give christians self-government" tags="" position="3206,1503.3333333333335" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="Advice of Give christians self-government" tags="" position="3206,1503" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -2927,7 +2841,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Give christians self-government]]
 [[Нет|Give christians self-government]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="117" name="Advice of Sell Leftoto Amer weapon" tags="" position="3700.3333333333335,1504.3333333333333" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="117" name="Advice of Sell Leftoto Amer weapon" tags="" position="3700,1504" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -2936,7 +2850,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Sell Leftoto Amer weapon]]
 [[Нет|Sell Leftoto Amer weapon]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="118" name="Advice of Sell mines to US firms" tags="" position="4198.999999999999,1503.6666666666667" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="118" name="Advice of Sell mines to US firms" tags="" position="4198,1503" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -2945,7 +2859,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Sell mines to US firms]]
 [[Нет|Sell mines to US firms]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="Advice of Give Russians a naval base" tags="" position="4697,1499.3333333333335" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="Advice of Give Russians a naval base" tags="" position="4697,1499" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -2954,7 +2868,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Give Russians a naval base]]
 [[Нет|Give Russians a naval base]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="Advice of Dramatically strengthen the secret police" tags="" position="5397.999999999999,1503.0000000000002" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="Advice of Dramatically strengthen the secret police" tags="" position="5397,1503" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -2963,7 +2877,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Dramatically strengthen the secret police]]
 [[Нет|Dramatically strengthen the secret police]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="121" name="Geted advice of Dramatically strengthen the secret police" tags="" position="5298.333333333333,1700" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="121" name="Geted advice of Dramatically strengthen the secret police" tags="" position="5298,1700" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3001,6 +2915,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3011,7 +2926,7 @@ $message.countBtn6
   [[Ок|Dramatically strengthen the secret police]]  
   [[Отмена|Improve chances]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="122" name="Geted advice of Strengthen bodyguard" tags="" position="5793.333333333333,1698" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="122" name="Geted advice of Strengthen bodyguard" tags="" position="5793,1698" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3049,6 +2964,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3059,7 +2975,7 @@ $message.countBtn6
   [[Ок|Strengthen bodyguard]]  
   [[Отмена|Improve chances]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="123" name="Advice of Strengthen bodyguard" tags="" position="5901.666666666666,1504.3333333333335" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="123" name="Advice of Strengthen bodyguard" tags="" position="5901,1504" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -3068,7 +2984,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Strengthen bodyguard]]
 [[Нет|Strengthen bodyguard]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="Geted advice of Get a helicopter" tags="" position="6294.333333333333,1700" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="Geted advice of Get a helicopter" tags="" position="6294,1700" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3106,6 +3022,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3116,7 +3033,7 @@ $message.countBtn6
   [[Ок|Get a helicopter]]  
   [[Отмена|Improve chances]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="125" name="Advice of Get a helicopter" tags="" position="6394.333333333333,1502.6666666666667" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="125" name="Advice of Get a helicopter" tags="" position="6394,1502" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -3125,7 +3042,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Get a helicopter]]
 [[Нет|Get a helicopter]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="Advice of Top up a Swiss bank account" tags="" position="6899.666666666667,1502.3333333333335" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="Advice of Top up a Swiss bank account" tags="" position="6899,1502" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -3134,7 +3051,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Top up a Swiss bank account]]
 [[Нет|Top up a Swiss bank account]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="127" name="Geted advice of Top up a Swiss bank account" tags="" position="6798.333333333333,1702" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="127" name="Geted advice of Top up a Swiss bank account" tags="" position="6798,1702" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3172,6 +3089,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3185,7 +3103,7 @@ $message.countBtn6
   [[Ок|Top up a Swiss bank account]]  
   [[Отмена|Improve chances]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="Geted advice of Ask for a loan from Russians" tags="" position="7598.333333333333,1700" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="Geted advice of Ask for a loan from Russians" tags="" position="7598,1700" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3223,6 +3141,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians - 5.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3233,7 +3152,7 @@ $message.countBtn6
   [[Ок|Ask for a loan from Russians]]  
   [[Отмена|Improve finance]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="129" name="Advice of Ask for a loan from Russians" tags="" position="7698.333333333333,1503.3333333333335" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="129" name="Advice of Ask for a loan from Russians" tags="" position="7698,1503" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -3242,7 +3161,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Ask for a loan from Russians]]
 [[Нет|Ask for a loan from Russians]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="Geted advice of Ask for help from Amer" tags="" position="8101.333333333333,1701" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="Geted advice of Ask for help from Amer" tags="" position="8101,1701" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3280,6 +3199,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans - 5.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3290,7 +3210,7 @@ $message.countBtn6
   [[Ок|Ask for help from Amer]]  
   [[Отмена|Improve finance]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="131" name="Advice of Ask for help from Amer" tags="" position="8198.000000000002,1499" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="131" name="Advice of Ask for help from Amer" tags="" position="8198,1499" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -3299,7 +3219,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Ask for help from Amer]]
 [[Нет|Ask for help from Amer]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="Geted advice of Nationalize enterprises Leftotos" tags="" position="8601.333333333334,1701" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="Geted advice of Nationalize enterprises Leftotos" tags="" position="8601,1701" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3348,7 +3268,7 @@ $message.countBtn6
   [[Ок|Nationalize enterprises Leftotos]]  
   [[Отмена|Improve finance]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="133" name="Advice of Nationalize enterprises Leftotos" tags="" position="8699.333333333334,1502.6666666666667" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="133" name="Advice of Nationalize enterprises Leftotos" tags="" position="8699,1502" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -3357,7 +3277,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Nationalize enterprises Leftotos]]
 [[Нет|Nationalize enterprises Leftotos]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="Geted advice of Conduct searches of army generals" tags="" position="9093.333333333334,1701" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="Geted advice of Conduct searches of army generals" tags="" position="9093,1701" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3395,6 +3315,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3405,7 +3326,7 @@ $message.countBtn6
   [[Ок|Conduct searches of army generals]]  
   [[Отмена|Improve finance]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="135" name="Advice of Conduct searches of army generals" tags="" position="9189,1499.3333333333335" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="135" name="Advice of Conduct searches of army generals" tags="" position="9189,1499" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -3414,7 +3335,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Conduct searches of army generals]]
 [[Нет|Conduct searches of army generals]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="136" name="Geted advice of Conduct searches of police" tags="" position="9596.333333333334,1707" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="136" name="Geted advice of Conduct searches of police" tags="" position="9606,1697" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3452,6 +3373,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3462,7 +3384,7 @@ $message.countBtn6
   [[Ок|Conduct searches of police]]  
   [[Отмена|Improve finance]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="137" name="Advice of Conduct searches of police" tags="" position="9695,1503" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="137" name="Advice of Conduct searches of police" tags="" position="9695,1503" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -3471,7 +3393,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Conduct searches of police]]
 [[Нет|Conduct searches of police]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="Geted advice of Acquire heavy artillery" tags="" position="10291.333333333334,1709" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="Geted advice of Acquire heavy artillery" tags="" position="11287,1702" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3509,6 +3431,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3519,7 +3442,7 @@ $message.countBtn6
   [[Ок|Acquire heavy artillery]]  
   [[Отмена|Strengthen one group]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="139" name="Geted advice of Expand the rights of peasants" tags="" position="10796.333333333334,1714" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="139" name="Geted advice of Expand the rights of peasants" tags="" position="11792,1707" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3536,7 +3459,7 @@ $message.countBtn6
 	Силовики: $popularWithArmy - 40.
 	&lt;&lt;if $popularWithChristians &lt; 90&gt;&gt;
 	  Граждане: $popularWithChristians + 5.
-	&lt;&lt;else 
+	&lt;&lt;else&gt;&gt;
 	  Граждане: $popularWithChristians.
 	&lt;&lt;/if&gt;&gt;
 	Тайная полиция: $popularWithPolice - 40.
@@ -3561,6 +3484,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+ 	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3571,7 +3495,7 @@ $message.countBtn6
   [[Ок|Expand the rights of peasants]]  
   [[Отмена|Strengthen one group]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="140" name="Advice of Acquire heavy artillery" tags="" position="10398.333333333334,1497.3333333333335" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="140" name="Advice of Acquire heavy artillery" tags="" position="11394,1490" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -3580,7 +3504,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Acquire heavy artillery]]
 [[Нет|Acquire heavy artillery]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="Advice of Expand the rights of peasants" tags="" position="10899.666666666668,1500.3333333333333" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="Advice of Expand the rights of peasants" tags="" position="11895,1493" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -3589,7 +3513,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Expand the rights of peasants]]
 [[Нет|Expand the rights of peasants]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="Advice of Let the peasants own their police" tags="" position="11401.333333333334,1508.6666666666667" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="Advice of Let the peasants own their police" tags="" position="12397,1501" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
@@ -3598,7 +3522,7 @@ $message.countBtn6
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted advice of Let the peasants own their police]]
 [[Нет|Let the peasants own their police]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="Geted advice of Let the peasants own their police" tags="" position="11301.333333333334,1712" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="Geted advice of Let the peasants own their police" tags="" position="12297,1705" size="100,100">
 
 &lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
@@ -3615,7 +3539,7 @@ $message.countBtn6
 	Силовики: $popularWithArmy - 40.
 	&lt;&lt;if $popularWithChristians &lt; 90&gt;&gt;
 	  Граждане: $popularWithChristians + 5.
-	&lt;&lt;else 
+	&lt;&lt;else&gt;&gt;
 	  Граждане: $popularWithChristians.
 	&lt;&lt;/if&gt;&gt;
 	Тайная полиция: $popularWithPolice - 40.
@@ -3640,6 +3564,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $popularWithRussians.
 	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3650,18 +3575,14 @@ $message.countBtn6
   [[Ок|Let the peasants own their police]]  
   [[Отмена|Strengthen one group]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="144" name="Soviet1 of New Month" tags="" position="5198.333333333333,695.6666666666666" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="144" name="Soviet1 of New Month" tags="" position="5198,695" size="100,100">&lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
 &lt;/div&gt;
 
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted soviet1 of New Month]]
 [[Нет|countButton1]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="145" name="Geted soviet1 of New Month" tags="" position="5097,901" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="145" name="Geted soviet1 of New Month" tags="" position="5097,901" size="100,100">&lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
 	Помощь советника!
 &lt;/div&gt;	
@@ -3697,6 +3618,7 @@ $message.countBtn6
 &lt;div&gt;
 	Россия: $message.adv1.popularWithRussians.
 	Америка: $message.adv1.popularWithAmericans.
+	Соседнее гос-во: $message.adv1.popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -3720,6 +3642,7 @@ $advice1one to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses + 20&#96;
 },
 $advice2one to {
@@ -3734,6 +3657,7 @@ $advice2one to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses + 20&#96;
 },
 $advice3one to {
@@ -3748,6 +3672,7 @@ $advice3one to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice4one to {
@@ -3762,6 +3687,7 @@ $advice4one to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96; 
 },
 $advice5one to {
@@ -3776,6 +3702,7 @@ $advice5one to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice6one to {
@@ -3790,6 +3717,7 @@ $advice6one to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice7one to {
@@ -3804,6 +3732,7 @@ $advice7one to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice8one to {
@@ -3818,20 +3747,7 @@ $advice8one to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
-  expenses: &#96;$expenses&#96;
-},
-$advice9one to {
-  coin: &#96;$coin&#96;,
-  popularWithArmy: &#96;$popularWithArmy&#96;,
-  popularWithChristians: &#96;$popularWithChristians&#96;,
-  partisans: &#96;$partisans&#96;,
-  popularWithPolice: &#96;$popularWithPolice&#96;,
-  hardWithArmy: &#96;$hardWithArmy&#96;,
-  hardWithChristians: &#96;$hardWithChristians&#96;,
-  hardWithPolice: &#96;$hardWithPolice&#96;,
-  partisansHards: &#96;$partisansHards&#96;,
-  popularWithRussians: &#96;$popularWithRussians&#96;,
-  popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 }
 &gt;&gt;</tw-passagedata><tw-passagedata pid="147" name="AdviceCount2" tags="" position="5800,203" size="100,100">&lt;&lt;set 
@@ -3847,6 +3763,7 @@ $advice1_2 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice2_2 to {
@@ -3861,6 +3778,7 @@ $advice2_2 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice3_2 to {
@@ -3875,6 +3793,7 @@ $advice3_2 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice4_2 to {
@@ -3889,6 +3808,7 @@ $advice4_2 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96; 
 },
 $advice5_2 to {
@@ -3903,6 +3823,7 @@ $advice5_2 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice6_2 to {
@@ -3917,6 +3838,7 @@ $advice6_2 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice7_2 to {
@@ -3931,6 +3853,7 @@ $advice7_2 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice8_2 to {
@@ -3945,20 +3868,7 @@ $advice8_2 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
-  expenses: &#96;$expenses&#96;
-},
-$advice9_2 to {
-  coin: &#96;$coin&#96;,
-  popularWithArmy: &#96;$popularWithArmy&#96;,
-  popularWithChristians: &#96;$popularWithChristians&#96;,
-  partisans: &#96;$partisans&#96;,
-  popularWithPolice: &#96;$popularWithPolice - $popularWithPolice&#96;,
-  hardWithArmy: &#96;$hardWithArmy&#96;,
-  hardWithChristians: &#96;$hardWithChristians&#96;,
-  hardWithPolice: &#96;$hardWithPolice&#96;,
-  partisansHards: &#96;$partisansHards&#96;,
-  popularWithRussians: &#96;$popularWithRussians&#96;,
-  popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 }
 &gt;&gt;</tw-passagedata><tw-passagedata pid="148" name="AdviceCount3" tags="" position="6008,201" size="100,100">&lt;&lt;set
@@ -3974,6 +3884,7 @@ $advice1_3 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice2_3 to {
@@ -4002,6 +3913,7 @@ $advice3_3 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice4_3 to {
@@ -4016,6 +3928,7 @@ $advice4_3 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96; 
 },
 $advice5_3 to {
@@ -4030,6 +3943,7 @@ $advice5_3 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice6_3 to {
@@ -4044,6 +3958,7 @@ $advice6_3 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice7_3 to {
@@ -4058,6 +3973,7 @@ $advice7_3 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice8_3 to {
@@ -4072,20 +3988,7 @@ $advice8_3 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
-  expenses: &#96;$expenses&#96;
-},
-$advice9_3 to {
-  coin: &#96;$coin&#96;,
-  popularWithArmy: &#96;$popularWithArmy&#96;,
-  popularWithChristians: &#96;$popularWithChristians&#96;,
-  partisans: &#96;$partisans&#96;,
-  popularWithPolice: &#96;$popularWithPolice&#96;,
-  hardWithArmy: &#96;$hardWithArmy&#96;,
-  hardWithChristians: &#96;$hardWithChristians&#96;,
-  hardWithPolice: &#96;$hardWithPolice&#96;,
-  partisansHards: &#96;$partisansHards&#96;,
-  popularWithRussians: &#96;$popularWithRussians&#96;,
-  popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 }
 &gt;&gt;</tw-passagedata><tw-passagedata pid="149" name="AdviceCount4" tags="" position="5601,403" size="100,100">&lt;&lt;set
@@ -4101,6 +4004,7 @@ $advice1_4 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice2_4 to {
@@ -4115,6 +4019,7 @@ $advice2_4 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice3_4 to {
@@ -4129,6 +4034,7 @@ $advice3_4 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice4_4 to {
@@ -4143,6 +4049,7 @@ $advice4_4 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96; 
 },
 $advice5_4 to {
@@ -4157,6 +4064,7 @@ $advice5_4 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice6_4 to {
@@ -4171,6 +4079,7 @@ $advice6_4 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice7_4 to {
@@ -4185,6 +4094,7 @@ $advice7_4 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice8_4 to {
@@ -4199,20 +4109,7 @@ $advice8_4 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
-  expenses: &#96;$expenses&#96;
-},
-$advice9_4 to {
-  coin: &#96;$coin&#96;,
-  popularWithArmy: &#96;$popularWithArmy&#96;,
-  popularWithChristians: &#96;$popularWithChristians&#96;,
-  partisans: &#96;$partisans&#96;,
-  popularWithPolice: &#96;$popularWithPolice&#96;,
-  hardWithArmy: &#96;$hardWithArmy&#96;,
-  hardWithChristians: &#96;$hardWithChristians&#96;,
-  hardWithPolice: &#96;$hardWithPolice&#96;,
-  partisansHards: &#96;$partisansHards&#96;,
-  popularWithRussians: &#96;$popularWithRussians&#96;,
-  popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 }
 &gt;&gt;</tw-passagedata><tw-passagedata pid="150" name="AdviceCount5" tags="" position="5800,400" size="100,100">&lt;&lt;set
@@ -4228,6 +4125,7 @@ $advice1_5 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice2_5 to {
@@ -4242,6 +4140,7 @@ $advice2_5 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice3_5 to {
@@ -4256,6 +4155,7 @@ $advice3_5 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice4_5 to {
@@ -4270,6 +4170,7 @@ $advice4_5 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96; 
 },
 $advice5_5 to {
@@ -4284,6 +4185,7 @@ $advice5_5 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice6_5 to {
@@ -4298,6 +4200,7 @@ $advice6_5 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice7_5 to {
@@ -4312,6 +4215,7 @@ $advice7_5 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice8_5 to {
@@ -4326,20 +4230,7 @@ $advice8_5 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
-  expenses: &#96;$expenses&#96;
-},
-$advice9_5 to {
-  coin: &#96;$coin&#96;,
-  popularWithArmy: &#96;$popularWithArmy&#96;,
-  popularWithChristians: &#96;$popularWithChristians&#96;,
-  partisans: &#96;$partisans&#96;,
-  popularWithPolice: &#96;$popularWithPolice&#96;,
-  hardWithArmy: &#96;$hardWithArmy&#96;,
-  hardWithChristians: &#96;$hardWithChristians&#96;,
-  hardWithPolice: &#96;$hardWithPolice&#96;,
-  partisansHards: &#96;$partisansHards&#96;,
-  popularWithRussians: &#96;$popularWithRussians&#96;,
-  popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 }
 &gt;&gt;</tw-passagedata><tw-passagedata pid="151" name="AdviceCount6" tags="" position="6001,400" size="100,100">&lt;&lt;set
@@ -4355,6 +4246,7 @@ $advice1_6 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice2_6 to {
@@ -4369,6 +4261,7 @@ $advice2_6 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice3_6 to {
@@ -4383,6 +4276,7 @@ $advice3_6 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice4_6 to {
@@ -4397,6 +4291,7 @@ $advice4_6 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96; 
 },
 $advice5_6 to {
@@ -4411,6 +4306,7 @@ $advice5_6 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice6_6 to {
@@ -4425,6 +4321,7 @@ $advice6_6 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice7_6 to {
@@ -4439,6 +4336,7 @@ $advice7_6 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 },
 $advice8_6 to {
@@ -4453,34 +4351,17 @@ $advice8_6 to {
   partisansHards: &#96;$partisansHards&#96;,
   popularWithRussians: &#96;$popularWithRussians&#96;,
   popularWithAmericans: &#96;$popularWithAmericans&#96;,
-  expenses: &#96;$expenses&#96;
-},
-$advice9_6 to {
-  coin: &#96;$coin&#96;,
-  popularWithArmy: &#96;$popularWithArmy&#96;,
-  popularWithChristians: &#96;$popularWithChristians&#96;,
-  partisans: &#96;$partisans&#96;,
-  popularWithPolice: &#96;$popularWithPolice&#96;,
-  hardWithArmy: &#96;$hardWithArmy&#96;,
-  hardWithChristians: &#96;$hardWithChristians&#96;,
-  hardWithPolice: &#96;$hardWithPolice&#96;,
-  partisansHards: &#96;$partisansHards&#96;,
-  popularWithRussians: &#96;$popularWithRussians&#96;,
-  popularWithAmericans: &#96;$popularWithAmericans&#96;,
+  popularWithLeftoto: &#96;$popularWithLeftoto&#96;,
   expenses: &#96;$expenses&#96;
 }
-&gt;&gt;</tw-passagedata><tw-passagedata pid="152" name="Soviet2 of New Month" tags="" position="5602,703.3333333333334" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&gt;&gt;</tw-passagedata><tw-passagedata pid="152" name="Soviet2 of New Month" tags="" position="5602,703" size="100,100">&lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
 &lt;/div&gt;
 
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted soviet2 of New Month]]
 [[Нет|countButton2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="Geted soviet2 of New Month" tags="" position="5497.333333333333,905.6666666666666" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="Geted soviet2 of New Month" tags="" position="5497,905" size="100,100">&lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
 	Помощь советника!
 &lt;/div&gt;	
@@ -4516,6 +4397,7 @@ $advice9_6 to {
 &lt;div&gt;
 	Россия: $message.adv2.popularWithRussians.
 	Америка: $message.adv2.popularWithAmericans.
+	Соседнее гос-во: $message.adv2.popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -4528,9 +4410,7 @@ $advice9_6 to {
   [[Отмена|NewMonth]]
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="154" name="Geted soviet3 of New Month" tags="" position="5899,907" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="154" name="Geted soviet3 of New Month" tags="" position="5899,907" size="100,100">&lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
 	Помощь советника!
 &lt;/div&gt;	
@@ -4566,6 +4446,7 @@ $advice9_6 to {
 &lt;div&gt;
 	Россия: $message.adv3.popularWithRussians.
 	Америка: $message.adv3.popularWithAmericans.
+	Соседнее гос-во: $message.adv3.popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -4576,18 +4457,14 @@ $advice9_6 to {
   [[Ок|countButton3]]
   [[Отмена|NewMonth]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="155" name="Soviet3 of New Month" tags="" position="5999.999999999999,702.3333333333334" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="155" name="Soviet3 of New Month" tags="" position="5999,702" size="100,100">&lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
 &lt;/div&gt;
 
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted soviet3 of New Month]]
 [[Нет|countButton3]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="Geted soviet4 of New Month" tags="" position="6299.666666666667,901.6666666666666" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="Geted soviet4 of New Month" tags="" position="6299,901" size="100,100">&lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
 	Помощь советника!
 &lt;/div&gt;	
@@ -4623,6 +4500,7 @@ $advice9_6 to {
 &lt;div&gt;
 	Россия: $message.adv4.popularWithRussians.
 	Америка: $message.adv4.popularWithAmericans.
+	Соседнее гос-во: $message.adv4.popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -4633,18 +4511,14 @@ $advice9_6 to {
   [[Ок|countButton4]]  
   [[Отмена|NewMonth]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="157" name="Soviet4 of New Month" tags="" position="6397.999999999999,700.3333333333333" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="157" name="Soviet4 of New Month" tags="" position="6397,700" size="100,100">&lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
 &lt;/div&gt;
 
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted soviet4 of New Month]]
 [[Нет|countButton4]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="158" name="Geted soviet5 of New Month" tags="" position="6699,902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="158" name="Geted soviet5 of New Month" tags="" position="6699,902" size="100,100">&lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
 	Помощь советника!
 &lt;/div&gt;	
@@ -4680,6 +4554,7 @@ $advice9_6 to {
 &lt;div&gt;
 	Россия: $message.adv5.popularWithRussians.
 	Америка: $message.adv5.popularWithAmericans.
+	Соседнее гос-во: $message.adv5.popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -4690,18 +4565,14 @@ $advice9_6 to {
   [[Ок|countButton5]]  
   [[Отмена|NewMonth]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="159" name="Soviet5 of New Month" tags="" position="6802.333333333333,699" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="159" name="Soviet5 of New Month" tags="" position="6802,699" size="100,100">&lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
 &lt;/div&gt;
 
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted soviet5 of New Month]]
 [[Нет|countButton5]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="160" name="Geted soviet6 of New Month" tags="" position="7100,902" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="160" name="Geted soviet6 of New Month" tags="" position="7100,902" size="100,100">&lt;div class=&quot;message&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;
 	Помощь советника!
 &lt;/div&gt;	
@@ -4737,6 +4608,7 @@ $advice9_6 to {
 &lt;div&gt;
 	Россия: $message.adv6.popularWithRussians.
 	Америка: $message.adv6.popularWithAmericans.
+	Соседнее гос-во: $message.adv6.popularWithLeftoto.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
@@ -4747,22 +4619,18 @@ $advice9_6 to {
   [[Ок|countButton6]]  
   [[Отмена|NewMonth]]
 &lt;/div&gt;
-&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="161" name="Soviet6 of New Month" tags="" position="7202.333333333333,700" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;message&quot;&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="161" name="Soviet6 of New Month" tags="" position="7202,700" size="100,100">&lt;div class=&quot;message&quot;&gt;
 	Воспользоваться услугами государственного советчика? Это будет стоить денег!
 &lt;/div&gt;
 
 &lt;div class=&quot;buttonsAll&quot;&gt;
 [[Да|Geted soviet6 of New Month]]
 [[Нет|countButton6]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="SecretPolice or nothing" tags="" position="5901.666666666667,1111.666666666667" size="100,100">&lt;&lt;if $secretPolice === false&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="SecretPolice or nothing" tags="" position="5901,1199" size="100,100">&lt;&lt;if $secretPolice === false&gt;&gt;
 	Тайная полиция ликвидирована, у тебя нет здесь власти! &lt;img class=&quot;devil&quot; src=&quot;https://loapits.github.io/political-game/img/devil.png&quot;&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;display [[Resourses]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="163" name="Leftoto against crists" tags="" position="4201.333333333333,511.00000000000006" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;&lt;if $hardWithLeftoto &gt; $hardWithChristians&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="163" name="Leftoto against crists" tags="" position="4201,501" size="100,100">&lt;&lt;if $hardWithLeftoto &gt; $hardWithChristians&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
 	Соседнее государство справилась с митингами! Все обошлось!)
 &lt;/div&gt;
@@ -4787,7 +4655,7 @@ $advice9_6 to {
 
 [[Закончить игру|Previous Game]]
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="164" name="Leftoto against protests" tags="" position="4991.666666666667,504.33333333333337" size="100,100">&lt;div class=&quot;fog&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="164" name="Leftoto against protests" tags="" position="4991,504" size="100,100">
 
 &lt;&lt;if $hardWithLeftoto &gt; $partisansHards&gt;&gt;
 &lt;div class=&quot;message&quot;&gt;
@@ -4810,7 +4678,109 @@ $advice9_6 to {
 
 [[Закончить игру|Previous Game]]
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata></tw-storydata>
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="165" name="Businessmans" tags="" position="10302,1700" size="100,100">&lt;&lt;if $businessmans === false&gt;&gt;
+  &lt;&lt;goto [[Businessmans can help to you]]&gt;&gt;
+&lt;&lt;else&gt;&gt;
+
+  &lt;&lt;goto [[Businessmans not helped to you]]&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+
+</tw-passagedata><tw-passagedata pid="166" name="Advice of Ask for Businessmans" tags="" position="10198,1501" size="100,100">
+
+&lt;div class=&quot;message&quot;&gt;
+	Воспользоваться услугами государственного советчика? Это будет стоить денег!
+&lt;/div&gt;
+
+&lt;div class=&quot;buttonsAll&quot;&gt;
+[[Да|Geted advice of Businessmans]]
+[[Нет|Businessmans]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="167" name="Geted advice of Businessmans" tags="" position="10100,1700" size="100,100">
+
+&lt;div class=&quot;message&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;
+	Помощь советника!
+&lt;/div&gt;	
+&lt;div&gt;
+
+&lt;&lt;if $businessmans === false&gt;&gt;
+  Деньги: $coin + 2000.
+&lt;&lt;else&gt;&gt;
+  Деньги: $coin.
+&lt;&lt;/if&gt;&gt;
+
+&lt;/div&gt;
+&lt;div class=&quot;popular&quot;&gt;
+&lt;div&gt;
+	Популярность:
+&lt;/div&gt;
+&lt;div&gt;
+	Силовики: $popularWithArmy.
+	Граждане: $popularWithChristians.
+	Тайная полиция: $popularWithPolice.
+	Партизаны: $partisans.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;popular&quot;&gt;
+&lt;div&gt;
+	Силы:
+&lt;/div&gt;
+&lt;div&gt;
+	Силовики: $hardWithArmy.
+	Граждане: $hardWithChristians.
+	Тайная полиция: $hardWithPolice.
+	Партизаны: $partisansHards.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;popular&quot;&gt;
+&lt;div&gt;
+	Дипломатические отношения:
+&lt;/div&gt;
+&lt;div&gt;
+	Россия: $popularWithRussians.
+	Америка: $popularWithAmericans.
+	Соседнее гос-во: $popularWithLeftoto.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  Месячные расходы: $expenses.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Ок|Businessmans]]  
+  [[Отмена|Improve finance]]
+&lt;/div&gt;
+&lt;&lt;set $coin -= 100&gt;&gt;</tw-passagedata><tw-passagedata pid="168" name="Businessmans can help to you" tags="" position="10201,1900" size="100,100">
+&lt;&lt;set $coin += 2000, $businessmans to true&gt;&gt;
+	
+&lt;div class=&quot;message&quot;&gt;
+	Олигархи пополняют казну со своих счетов.
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+[[Улучшить еще|Start]]
+[[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="169" name="Businessmans not helped to you" tags="" position="10401,1898" size="100,100">
+
+&lt;div class=&quot;message&quot;&gt;
+	Олигархи уже пополнили казнут очень сильно. Еще пополнять ее они не собираются.
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Улучшить еще|Start]]
+  [[Закончить этот месяц|Switch month]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="170" name="Secret police is liquidate" tags="" position="5193,1899" size="100,100">
+
+&lt;div class=&quot;message&quot;&gt;
+  Тайная полиция была ликвидирована, нечего усилять!
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  [[Да наверное правда|Start]]
+&lt;/div&gt;
+</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},errorPrologRegExp=/^(?:(?:uncaught\s+(?:exception:\s+)?)?\w*(?:error|exception|_err):\s+)+/i,Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(errorPrologRegExp,"")+".":": unknown error."),"object"===(void 0===n?"undefined":_typeof(n))&&null!==n&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}(),Patterns=function(){var e=function(){var e=new Map([[" ","\\u0020"],["\f","\\f"],["\n","\\n"],["\r","\\r"],["\t","\\t"],["\v","\\v"],[" ","\\u00a0"],[" ","\\u1680"],["᠎","\\u180e"],[" ","\\u2000"],[" ","\\u2001"],[" ","\\u2002"],[" ","\\u2003"],[" ","\\u2004"],[" ","\\u2005"],[" ","\\u2006"],[" ","\\u2007"],[" ","\\u2008"],[" ","\\u2009"],[" ","\\u200a"],["\u2028","\\u2028"],["\u2029","\\u2029"],[" ","\\u202f"],[" ","\\u205f"],["　","\\u3000"],["\ufeff","\\ufeff"]]),t=/^\s$/,r="";return e.forEach(function(e,n){t.test(n)||(r+=e)}),r?"[\\s"+r+"]":"\\s"}(),t="[\\u0020\\f\\t\\v\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000\\ufeff]",r="\\s"===e?"\\S":e.replace(/^\[/,"[^"),n="[0-9A-Z_a-z\\-\\u00c0-\\u00d6\\u00d8-\\u00f6\\u00f8-\\u00ff\\u0150\\u0170\\u0151\\u0171]",a=n.replace("\\-",""),i=function(){return"("+n+"+)\\(([^\\)\\|\\n]+)\\):|"+t+"*("+n+"+)"+t+"*:([^;\\|\\n]+);|"+t+"*((?:[#.]"+n+"+"+t+"*)+);"}();return Object.freeze({space:e,spaceNoTerminator:t,lineTerminator:"[\\n\\r\\u2028\\u2029]",notSpace:r,anyChar:"(?:.|[\\n\\r\\u2028\\u2029])",anyLetter:n,anyLetterStrict:a,identifierFirstChar:"[$A-Z_a-z]",identifierNextChar:"[$0-9A-Z_a-z]",identifier:"[$A-Z_a-z][$0-9A-Z_a-z]*",variableSigil:"[$_]",variable:"[$_][$A-Z_a-z][$0-9A-Z_a-z]*",macroName:"[A-Za-z][\\w-]*|[=-]",templateName:"[A-Za-z][\\w-]*",cssIdOrClassSigil:"[#.]",cssImage:"\\[[<>]?[Ii][Mm][Gg]\\[(?:\\s|\\S)*?\\]\\]+",inlineCss:i,url:"(?:file|https?|mailto|ftp|javascript|irc|news|data):[^\\s'\"]+"})}();!function(){function e(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n=void 0===t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var t=function(){function e(e,n){var a=String(e);if(!a)return a;switch(n){case"start":return t.test(a)?a.replace(t,""):a;case"end":return r.test(a)?a.replace(r,""):a;default:throw new Error('_trimString called with incorrect where parameter value: "'+n+'"')}}var t=new RegExp("^"+Patterns.space+Patterns.space+"*"),r=new RegExp(""+Patterns.space+Patterns.space+"*$");return e}();Array.prototype.flat||Object.defineProperty(Array.prototype,"flat",{configurable:!0,writable:!0,value:function(){function e(){if(null==this)throw new TypeError("Array.prototype.flat called on null or undefined");var t=0===arguments.length?1:Number(arguments[0])||0;return t<1?Array.prototype.slice.call(this):Array.prototype.reduce.call(this,function(r,n){return n instanceof Array?r.push.apply(r,_toConsumableArray(e.call(n,t-1))):r.push(n),r},[])}return e}()}),Array.prototype.flatMap||Object.defineProperty(Array.prototype,"flatMap",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatMap called on null or undefined");return Array.prototype.map.apply(this,arguments).flat()}}),Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(n===t||n!==n&&t!==t)return!0}return!1}}),Object.entries||Object.defineProperty(Object,"entries",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.entries object parameter must be an object");return Object.keys(e).map(function(t){return[t,e[t]]})}}),Object.fromEntries||Object.defineProperty(Object,"fromEntries",{configurable:!0,writable:!0,value:function(e){return Array.from(e).reduce(function(e,t){if(Object(t)!==t)throw new TypeError("Object.fromEntries iterable parameter must yield objects");return t[0]in e?Object.defineProperty(e,t[0],{configurable:!0,enumerable:!0,writable:!0,value:t[1]}):e[t[0]]=t[1],e},{})}}),Object.getOwnPropertyDescriptors||Object.defineProperty(Object,"getOwnPropertyDescriptors",{configurable:!0,writable:!0,value:function(e){if(null==e)throw new TypeError("Object.getOwnPropertyDescriptors object parameter is null or undefined");var t=Object(e);return Reflect.ownKeys(t).reduce(function(e,r){var n=Object.getOwnPropertyDescriptor(t,r);return void 0!==n&&(r in e?Object.defineProperty(e,r,{configurable:!0,enumerable:!0,writable:!0,value:n}):e[r]=n),e},{})}}),Object.values||Object.defineProperty(Object,"values",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.values object parameter must be an object");return Object.keys(e).map(function(t){return e[t]})}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:e(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:n+e(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return t(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return t(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return t(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return t(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r)<0&&(r=0),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n)<0&&(n=e-1),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){return e[0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1))]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var e=Array.from(this);if(0===arguments.length)return e;var t=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),r=t.length;if(0===r)return e;for(var n=Array.prototype.indexOf,a=Array.prototype.push,i=0;i<r;++i){var o=t[i];-1===n.call(e,o)&&a.call(e,o)}return e}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;-1!==(r=e.call(this,t,r));)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.concat.apply([],arguments),r=t.length,n=[],a=0;a<e;++a)for(var i=this[a],o=0;o<r;++o){var s=t[o];if(i===s||i!==i&&s!==s){n.push(a);break}}for(var u=[],l=0,c=n.length;l<c;++l)u[l]=this[n[l]];for(var d=Array.prototype.splice,f=n.length-1;f>=0;--f)d.call(this,n[f],1);return u}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"deleteWith",{configurable:!0,writable:!0,value:function(e,t){if(null==this)throw new TypeError("Array.prototype.deleteWith called on null or undefined");if("function"!=typeof e)throw new Error("Array.prototype.deleteWith predicate parameter must be a function");var r=this.length>>>0;if(0===r)return[];for(var n=Array.prototype.splice,a=[],i=[],o=0;o<r;++o)e.call(t,this[o],o,this)&&(i.push(this[o]),a.push(o));for(var s=a.length-1;s>=0;--s)n.call(this,a[s],1);return i}}),Object.defineProperty(Array.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.first called on null or undefined");if(0!=this.length>>>0)return this[0]}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.last called on null or undefined");var e=this.length>>>0;if(0!==e)return this[e-1]}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do{a.push(n.call(this,_random(0,i--),1)[0])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){return this[0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)))]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do{o=_random(0,i)}while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.unshift,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function(e,t,r){var n=Number(e);return Number.isNaN(n)?NaN:n.clamp(t,r)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch(void 0===i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return-1!==String.prototype.indexOf.apply(this,arguments)}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;-1!==(n=t.call(this,e,n));)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.first called on null or undefined");return _getCodePointStartAndEnd(String(this),0).char}}),Object.defineProperty(String.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.last called on null or undefined");var e=String(this);return _getCodePointStartAndEnd(e,e.length-1).char}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n)<0&&(a=0):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return void 0!==r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.flat.call(this,1/0)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Opera:!t&&("object"===_typeof(window.operamini)||e.includes("opera mini")),Windows:t||/iemobile|wpdesktop/.test(e),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Opera||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null,u=e.includes("vivaldi");return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s,isVivaldi:u})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),r=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),n=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),a=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}(),i=function(){try{return"ontouchstart"in window||!!window.DocumentTouch&&document instanceof window.DocumentTouch||!!navigator.maxTouchPoints||!!navigator.msMaxTouchPoints}catch(e){}return!1}(),o=function(){try{for(var e=new Map([["transition","transitionend"],["MSTransition","msTransitionEnd"],["WebkitTransition","webkitTransitionEnd"],["MozTransition","transitionend"]]),t=[].concat(_toConsumableArray(e.keys())),r=document.createElement("div"),n=0;n<t.length;++n)if(r.style[t[n]]!==undefined)return e.get(t[n])}catch(e){}return!1}();return Object.freeze({audio:e,fileAPI:t,geolocation:r,mutationObserver:n,performance:a,touch:i,transitionEndEvent:o})}(),Visibility=function(){function e(){return a}function t(){return a&&document[a.stateProperty]||"visible"}function r(){return Boolean(a)}function n(){return Boolean(a&&document[a.hiddenProperty])}var a=function(){try{return Object.freeze([{hiddenProperty:"hidden",stateProperty:"visibilityState",changeEvent:"visibilitychange"},{hiddenProperty:"webkitHidden",stateProperty:"webkitVisibilityState",changeEvent:"webkitvisibilitychange"},{hiddenProperty:"mozHidden",stateProperty:"mozVisibilityState",changeEvent:"mozvisibilitychange"},{hiddenProperty:"msHidden",stateProperty:"msVisibilityState",changeEvent:"msvisibilitychange"}].find(function(e){return e.hiddenProperty in document}))}catch(e){}return undefined}();return Object.freeze(Object.defineProperties({},{vendor:{get:e},state:{get:t},isEnabled:{value:r},isHidden:{value:n},hiddenProperty:{value:a&&a.hiddenProperty},stateProperty:{value:a&&a.stateProperty},changeEvent:{value:a&&a.changeEvent}}))}(),Fullscreen=function(){function e(e){var t=e||document.documentElement;return t===document.documentElement&&("msRequestFullscreen"===f.requestFn||Browser.isOpera&&Browser.operaVersion<15)&&(t=document.body),t}function t(){return f}function r(){return(f||null)&&document[f.element]}function n(){return Boolean(f&&document[f.isEnabled])}function a(){return Boolean(f&&document[f.element])}function i(t,r){var n=this;if(!f)return Promise.reject(new Error("fullscreen not supported"));var i=e(r);if("function"!=typeof i[f.requestFn])return Promise.reject(new Error("fullscreen not supported"));if(a())return Promise.resolve();if(p())return i[f.requestFn](t);var o=".Fullscreen_requestFullscreen";return new Promise(function(e,r){jQuery(i).off(o).one(""+f.errorEvent+o+" "+f.changeEvent+o,function(t){jQuery(n).off(o),t.type===f.errorEvent?r(new Error("unknown fullscreen request error")):e()}),i[f.requestFn](t)})}function o(){var e=this;if(!f||"function"!=typeof document[f.exitFn])return Promise.reject(new TypeError("fullscreen not supported"));if(!a())return Promise.reject(new TypeError("fullscreen mode not active"));if(p())return document[f.exitFn]();var t=".Fullscreen_exitFullscreen";return new Promise(function(r,n){jQuery(document).off(t).one(""+f.errorEvent+t+" "+f.changeEvent+t,function(a){jQuery(e).off(t),a.type===f.errorEvent?n(new Error("unknown fullscreen exit error")):r()}),document[f.exitFn]()})}function s(e,t){return a()?o():i(e,t)}function u(t,r){if(f){var n=e(r);$(n).on(f.changeEvent,t)}}function l(t,r){if(f){var n=e(r);t?$(n).off(f.changeEvent,t):$(n).off(f.changeEvent)}}function c(t,r){if(f){var n=e(r);$(n).on(f.errorEvent,t)}}function d(t,r){if(f){var n=e(r);t?$(n).off(f.errorEvent,t):$(n).off(f.errorEvent)}}var f=function(){try{return Object.freeze([{isEnabled:"fullscreenEnabled",element:"fullscreenElement",requestFn:"requestFullscreen",exitFn:"exitFullscreen",changeEvent:"fullscreenchange",errorEvent:"fullscreenerror"},{isEnabled:"webkitFullscreenEnabled",element:"webkitFullscreenElement",requestFn:"webkitRequestFullscreen",exitFn:"webkitExitFullscreen",changeEvent:"webkitfullscreenchange",errorEvent:"webkitfullscreenerror"},{isEnabled:"mozFullScreenEnabled",element:"mozFullScreenElement",requestFn:"mozRequestFullScreen",exitFn:"mozCancelFullScreen",changeEvent:"mozfullscreenchange",errorEvent:"mozfullscreenerror"},{isEnabled:"msFullscreenEnabled",element:"msFullscreenElement",requestFn:"msRequestFullscreen",exitFn:"msExitFullscreen",changeEvent:"MSFullscreenChange",errorEvent:"MSFullscreenError"}].find(function(e){return e.isEnabled in document}))}catch(e){}return undefined}(),p=function(){function e(){if(null!==t)return t;if(t=!1,f)try{var e=document.exitFullscreen();e.catch(function(){}),t=e instanceof Promise}catch(e){}return t}var t=null;return e}();return Object.freeze(Object.defineProperties({},{vendor:{get:t},element:{get:r},isEnabled:{value:n},isFullscreen:{value:a},request:{value:i},exit:{value:o},toggle:{value:s},onChange:{value:u},offChange:{value:l},onError:{value:c},offError:{value:d}}))}(),_ref3=function(){function e(e){for(var t=e.cloneNode(!0),r=document.createDocumentFragment(),n=void 0;null!==(n=t.firstChild);){if(n.nodeType===Node.ELEMENT_NODE)switch(n.nodeName.toUpperCase()){case"BR":case"DIV":case"P":r.appendChild(document.createTextNode(" "))}r.appendChild(n)}return r.textContent}function t(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)return e;if(e instanceof String)return String(e);if(e instanceof Number)return Number(e);if(e instanceof Boolean)return Boolean(e);if("function"==typeof e.clone)return e.clone(!0);if(e.nodeType&&"function"==typeof e.cloneNode)return e.cloneNode(!0);var r=void 0;return e instanceof Array?r=new Array(e.length):e instanceof Date?r=new Date(e.getTime()):e instanceof Map?(r=new Map,e.forEach(function(e,n){return r.set(n,t(e))})):e instanceof RegExp?r=new RegExp(e):e instanceof Set?(r=new Set,e.forEach(function(e){return r.add(t(e))})):r=Object.create(Object.getPrototypeOf(e)),Object.keys(e).forEach(function(n){return r[n]=t(e[n])}),r}function r(e){
