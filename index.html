@@ -192,10 +192,6 @@ a:hover:after{
   	border-image:
       url("https://loapits.github.io/political-game/img/message-border.jpg") 200 stretch;
 }
-.devil{
-	width: 50px;
-  	height: 50px;
-}
 .buttons{
 	overflow-y: scroll;
   	overflow: auto;
@@ -230,7 +226,9 @@ a:hover:after{
   	position: relative;
  	width: 700px; 
 } 
-
+.normal{
+	font-style: normal;
+}
 /* Adaptive desctop */
 @media only screen and (min-width: 1920px){
   #story{
@@ -1476,14 +1474,14 @@ $message6 to {
   message: &quot;Тебя посетил твой злейший друг - правитель соседнего государства!&quot;,
   button1: &quot;Угостить его мороженым&quot;,
   button2: &quot;Покататься с ним на подводной лодке&quot;,
-  button3: &quot;Полетать с ним вертолёте&quot;,
+  button3: &quot;Полетать с ним на вертолёте&quot;,
 
   countBtn1: &#96;&lt;&lt;set $leftotoMyFriend to false&gt;&gt;&#96;,
   countBtn2: &#96;&lt;&lt;set $leftotoMyFriend to false&gt;&gt;&#96;,
   countBtn3: &#96;&lt;&lt;set $leftotoMyFriend to false&gt;&gt;&#96;,
   effect1: &#96;Мороженое случайно оказывается радужным и с великолепным названием &quot;Радуга&quot;. Правитель в недоумении.&#96;,
   effect2:&#96;Упс. У него клаустрофобия. Кажется он очень сильно возненавидит тебя после этого.&#96;,
-  effect3: &#96;Он же высоты боится. Ну все, теперь точно конец отношениям между вашими странами.&#96;,
+  effect3: &#96;Он же высоты боится... Ну все, теперь точно конец отношениям между вашими странами.&#96;,
   adv1: $advice6one,
   adv2: $advice6_2,
   adv3: $advice6_3,
@@ -4627,7 +4625,7 @@ $advice8_6 to {
 [[Да|Geted soviet6 of New Month]]
 [[Нет|countButton6]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="SecretPolice or nothing" tags="" position="5901,1199" size="100,100">&lt;&lt;if $secretPolice === false&gt;&gt;
-	Тайная полиция ликвидирована, у тебя нет здесь власти! &lt;img class=&quot;devil&quot; src=&quot;https://loapits.github.io/political-game/img/devil.png&quot;&gt;
+	&lt;span&gt;&lt;span class=&quot;normal&quot;&gt;😈&lt;/span&gt;Тайная полиция ликвидирована, у тебя нет здесь власти!&lt;span class=&quot;normal&quot;&gt;😈&lt;/span&gt;&lt;/span&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;display [[Resourses]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="163" name="Leftoto against crists" tags="" position="4201,501" size="100,100">&lt;&lt;if $hardWithLeftoto &gt; $hardWithChristians&gt;&gt;
