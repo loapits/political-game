@@ -229,6 +229,32 @@ a:hover:after{
 .normal{
 	font-style: normal;
 }
+.patreon{
+  	position: absolute;
+  	bottom: 30px;
+  	right: 30px;
+	border: none;
+  	background: none;
+  	background: #f4511e;
+  	border-radius: 100%;
+  	min-width: 50px;
+  	min-height: 50px;
+  	margin: 0;
+  	padding: 0;
+}
+.patreon:hover{
+  background: #f4511e;
+  border:none;
+}
+.patreon:after{
+	display: none;
+}
+.patreon__img{
+	width: 30px;
+  	height: 30px;
+  	margin: 0;
+  	padding: 0;
+}
 /* Adaptive desctop */
 @media only screen and (min-width: 1920px){
   #story{
@@ -660,7 +686,24 @@ a:hover:after{
 	favicon.type = "image/svg";
 	favicon.href = "https://loapits.github.io/political-game/img/favicon.svg";
 	document.head.appendChild(favicon);
-}());
+})();
+
+;(function(){
+	const patreonLink = document.createElement('a');
+	const patreonImg = document.createElement('img');
+	patreonLink.href = "https://www.patreon.com/amor1"
+	patreonLink.target = "_blank";
+	patreonLink.className = "patreon";
+	patreonLink.appendChild(patreonImg);
+	patreonImg.className = "patreon__img";
+	patreonImg.src = "https://loapits.github.io/political-game/img/patreon.svg"
+	document.body.appendChild(patreonLink)
+	
+	//<a class="patreon" href="https://www.patreon.com/amor1">
+	//<img class="patreon__img" src="https://loapits.github.io/political-game/img/favicon.svg"/>
+//</a>
+	
+})()
 
 //;(function () {
 //	const script = document.createElement('script')
@@ -877,11 +920,11 @@ a:hover:after{
 &lt;&lt;else&gt;&gt;
   &lt;&lt;goto [[Leftotos enterprises have Nationalize]]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="23" name="State" tags="" position="6200,0" size="100,100">&lt;&lt;display [[Buttons]]&gt;&gt;
+</tw-passagedata><tw-passagedata pid="23" name="State" tags="" position="6201.666666666667,0" size="100,100">&lt;&lt;display [[Buttons]]&gt;&gt;
 &lt;&lt;display [[ResoursesState]]&gt;&gt;
 &lt;&lt;set 	
 	//Greeteng
-	$greeting to &quot;О! Привет и добро пожаловать на пост главы нашего госудаства! Надеюсь ты сможешь поднять наше государство к небывалым вершинам! Прокачивай внешнюю политику, развивай внутреннюю экономику а главное не теряй популяроность, иначе проиграешь! И запомни главное: «Быть диктатором — сложный труд» &quot;	
+	$greeting to &quot;О! Привет и добро пожаловать на пост главы нашего госудаства! Надеюсь ты сможешь поднять наше государство к небывалым вершинам! Прокачивай внешнюю политику, развивай внутреннюю экономику а главное не теряй популяроность, иначе проиграешь! И запомни главное: «Быть диктатором — сложный труд»&quot;
 &gt;&gt;
 
 &lt;&lt;if $month === 1&gt;&gt;
@@ -1208,7 +1251,7 @@ a:hover:after{
 &lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Switch month" tags="" position="6200,2301" size="100,100">&lt;&lt;set $month += 1, $addToBank to false&gt;&gt;
-&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Month" tags="" position="6200,305" size="100,100">&lt;&lt;set $message to either($arr)&gt;&gt;
+&lt;&lt;goto [[Month]]&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Month" tags="" position="6200,306.6666666666667" size="100,100">&lt;&lt;set $message to either($arr)&gt;&gt;
 
 &lt;&lt;if $coin &lt;= 0 &gt;&gt;
 &lt;&lt;goto [[Money is over]]&gt;&gt;
@@ -1227,7 +1270,9 @@ a:hover:after{
 [[Начать|NewMonth]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-
+&lt;a class=&quot;patreon&quot; href=&quot;https://www.patreon.com/amor1&quot;&gt;
+	&lt;img class=&quot;patreon__img&quot; src=&quot;https://loapits.github.io/political-game/img/favicon.svg&quot;/&gt;
+&lt;/a&gt;
 
 </tw-passagedata><tw-passagedata pid="42" name="Previous Game" tags="" position="6395,102" size="100,100">
 
